@@ -36,7 +36,6 @@
 !/invoice*.html
 !/nginx.conf
 !/api
-!/conf
 
 # Scraped boat images (deployed separately)
 public/img/boats/
