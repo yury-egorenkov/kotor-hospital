@@ -10,7 +10,7 @@ const { lang } = Astro.props;
 
 <footer class="bg-stone-900 text-stone-400">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
       <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
         <div class="flex items-center gap-3 mb-4">
@@ -33,6 +33,20 @@ const { lang } = Astro.props;
           <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/about/'} class="text-sm hover:text-white transition-colors">{t(lang, 'nav.about')}</a></li>
           <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/contact/'} class="text-sm hover:text-white transition-colors">{t(lang, 'nav.contact')}</a></li>
           <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/patients/'} class="text-sm hover:text-white transition-colors">{t(lang, 'nav.patients')}</a></li>
+        </ul>
+      </div>
+
+      <!-- Services & Info -->
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t(lang, 'footer.services')}</h3>
+        <ul class="space-y-2.5">
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/insurance/'} class="text-sm hover:text-white transition-colors">{t(lang, 'insurance.badge')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/laboratory/'} class="text-sm hover:text-white transition-colors">{t(lang, 'laboratory.badge')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/prices/'} class="text-sm hover:text-white transition-colors">{t(lang, 'prices.badge')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/faq/'} class="text-sm hover:text-white transition-colors">{t(lang, 'faq.badge')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/news/'} class="text-sm hover:text-white transition-colors">{t(lang, 'news.badge')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/careers/'} class="text-sm hover:text-white transition-colors">{t(lang, 'careers.badge')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/meljine/'} class="text-sm hover:text-white transition-colors">{t(lang, 'meljine.badge')}</a></li>
         </ul>
       </div>
 
