@@ -1,0 +1,84 @@
+---
+import { t, type Locale } from '../i18n/utils';
+import SectionBadge from './SectionBadge.astro';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const badgeIcon = '<svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>';
+
+const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
+---
+
+<main>
+  <section class="py-12 sm:py-20 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="mb-8 sm:mb-12">
+        <SectionBadge text={t(lang, 'prices.badge')} icon={badgeIcon} />
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'prices.title')}</h1>
+        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-stone-500">{t(lang, 'prices.subtitle')}</p>
+      </div>
+
+      <div class="space-y-8 sm:space-y-12">
+        <!-- Fund patients -->
+        <div>
+          <div class="flex items-center gap-3 mb-3 sm:mb-4">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0">
+              <svg class="w-4.5 h-4.5 sm:w-5 sm:h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'prices.fund.title')}</h2>
+          </div>
+          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+            <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+              <p>{t(lang, 'prices.fund.p1')}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Self-pay -->
+        <div>
+          <div class="flex items-center gap-3 mb-3 sm:mb-4">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-amber-100 flex items-center justify-center shrink-0">
+              <svg class="w-4.5 h-4.5 sm:w-5 sm:h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'prices.selfpay.title')}</h2>
+          </div>
+          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+            <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+              <p>{t(lang, 'prices.selfpay.p1')}</p>
+              <p>{t(lang, 'prices.selfpay.p2')}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- How to find prices -->
+        <div>
+          <div class="flex items-center gap-3 mb-3 sm:mb-4">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+              <svg class="w-4.5 h-4.5 sm:w-5 sm:h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'prices.info.title')}</h2>
+          </div>
+          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+            <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+              <p>{t(lang, 'prices.info.p1')}</p>
+              <p>{t(lang, 'prices.info.p2')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back link -->
+      <div class="mt-8 sm:mt-12">
+        <a href={homeHref} class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          {t(lang, 'patients.back')}
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

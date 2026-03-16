@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Scroll reveal — base state hidden, JS adds .visible */
-.reveal {
-  @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
-}
-.reveal.visible {
-  @apply opacity-100 translate-y-0;
-}
-
 /* Accordion — JS toggles .open / .rotated */
 .accordion-body {
   @apply max-h-0 overflow-hidden transition-all duration-300 ease-out;

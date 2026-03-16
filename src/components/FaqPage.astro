@@ -1,0 +1,66 @@
+---
+import { t, type Locale } from '../i18n/utils';
+import SectionBadge from './SectionBadge.astro';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const badgeIcon = '<svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m.08 4h.01"/></svg>';
+
+const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
+
+const questions = [
+  { q: 'faq.q1', a: 'faq.a1' },
+  { q: 'faq.q2', a: 'faq.a2' },
+  { q: 'faq.q3', a: 'faq.a3' },
+  { q: 'faq.q4', a: 'faq.a4' },
+  { q: 'faq.q5', a: 'faq.a5' },
+  { q: 'faq.q6', a: 'faq.a6' },
+  { q: 'faq.q7', a: 'faq.a7' },
+];
+---
+
+<main>
+  <section class="py-12 sm:py-20 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="mb-8 sm:mb-12">
+        <SectionBadge text={t(lang, 'faq.badge')} icon={badgeIcon} />
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'faq.title')}</h1>
+        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-stone-500">{t(lang, 'faq.subtitle')}</p>
+      </div>
+
+      <!-- Accordion -->
+      <div class="space-y-3">
+        {questions.map(({ q, a }) => (
+          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl overflow-hidden">
+            <button
+              type="button"
+              class="accordion-btn w-full flex items-center justify-between gap-4 p-4 sm:p-6 text-left text-sm sm:text-base font-semibold text-stone-900 hover:bg-stone-50 transition-colors"
+              aria-expanded="false"
+            >
+              <span>{t(lang, q)}</span>
+              <svg class="accordion-icon w-5 h-5 text-stone-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-stone-600 leading-relaxed">
+                {t(lang, a)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Back link -->
+      <div class="mt-8 sm:mt-12">
+        <a href={homeHref} class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          {t(lang, 'patients.back')}
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

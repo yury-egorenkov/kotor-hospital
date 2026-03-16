@@ -20,12 +20,12 @@ const badgeIcon = '<svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 
 
 <section class="py-16 sm:py-20 lg:py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-2xl mb-12 reveal">
+    <div class="max-w-2xl mb-12">
       <SectionBadge text={t(lang, 'leadership.badge')} icon={badgeIcon} />
       <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'leadership.title')}</h2>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {leaders.map((leader) => (
         <div class="text-center">
           <div class="w-24 h-24 rounded-full bg-stone-200 mx-auto mb-4 flex items-center justify-center">

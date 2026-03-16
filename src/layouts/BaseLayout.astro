@@ -88,18 +88,7 @@ const alternateLinks = getAlternateLinks('/');
       document.cookie = COOKIE + '=cnr;path=/;max-age=31536000';
     })();
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Accordion
+// Accordion
     document.querySelectorAll('.accordion-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const body = btn.nextElementSibling as HTMLElement;
