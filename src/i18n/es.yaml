@@ -142,6 +142,20 @@ about.project.expansion.desc: "Nuevas capacidades, equipamiento moderno y espaci
 about.project.teledoc.title: "TELE.DOC — proyecto UE, 1,116 M€"
 about.project.teledoc.desc: "Desarrollo de la telemedicina y la sanidad digital en la región transfronteriza."
 
+about.page.description: "Sobre el Hospital General de Kotor — historia, misión, proyectos, dirección y filial Meljine."
+about.subtitle: "Institución pública de salud que proporciona atención sanitaria a los municipios de Kotor, Tivat y Herceg Novi."
+about.mission.title: "Misión"
+about.mission.desc: "El Hospital General de Kotor es el centro hospitalario de referencia para la región de la bahía de Kotor. Nuestra misión es ofrecer atención sanitaria de calidad, accesible y moderna a más de 70.000 habitantes de tres municipios costeros."
+about.projects.title: "Proyectos"
+about.meljine.title: "Filial Meljine"
+about.meljine.desc: "La filial en Meljine, Herceg Novi, ofrece servicios de rehabilitación y fisioterapia. Complementa la capacidad del hospital principal en Škaljari."
+about.more: "Más detalles"
+about.gallery.title: "Nuestro hospital"
+about.gallery.building: "Edificio principal del hospital, Škaljari"
+about.gallery.main: "Hospital General de Kotor"
+about.gallery.expansion: "Proyecto de ampliación — centro clínico hospitalario"
+about.gallery.meljine: "Filial Meljine, Herceg Novi"
+
 leadership.badge: "Dirección"
 leadership.title: "Equipo directivo"
 leadership.director: "Director del hospital"
@@ -181,6 +195,9 @@ contact.directions.tivat.desc: "Carretera principal Tivat–Kotor, 8 km. El hosp
 contact.directions.hn.title: "Desde Herceg Novi"
 contact.directions.hn.desc: "Carretera principal por Risan, 30 km. Alternativa: filial Meljine para rehabilitación."
 contact.map.title: "Ubicación del hospital en el mapa"
+contact.page.description: "Información de contacto, horarios, dirección y cómo llegar al Hospital General de Kotor."
+contact.subtitle: "Dirección, teléfono, horarios y cómo llegar al hospital."
+contact.more: "Más detalles"
 
 footer.brand.desc: "Institución pública de salud Hospital General de Kotor. Atención sanitaria para los municipios de Kotor, Tivat y Herceg Novi."
 footer.nav: "Navegación"
@@ -226,6 +243,78 @@ patients.insurance.fond: "El hospital tiene convenio con el Fondo de Seguro Méd
 patients.insurance.eu: "Los pacientes de la UE pueden utilizar la Tarjeta Sanitaria Europea (TSE)"
 patients.insurance.foreign: "Para ciudadanos extranjeros — seguro médico privado o pago directo"
 patients.insurance.prices: "Lista de precios disponible en la recepción del hospital"
+patients.insurance.summary: "El hospital atiende a pacientes con seguro público, europeo y privado, así como a pacientes de pago directo."
+patients.insurance.more: "Más información sobre seguros"
+
+insurance.page.description: "Seguro médico en el Hospital General de Kotor — Fondo público, TSE, seguro privado y pago directo."
+insurance.badge: "Seguro"
+insurance.title: "Seguro Médico"
+insurance.subtitle: "Qué tipos de seguro aceptamos y lo que necesita saber antes de su visita."
+
+insurance.fond.title: "Fondo de Seguro Médico"
+insurance.fond.p1: "El Hospital General de Kotor tiene convenio con el Fondo de Seguro Médico de Montenegro. Servicios cubiertos: urgencias, tratamiento hospitalario y ambulatorio, diagnóstico y rehabilitación."
+insurance.fond.p2: "Necesitará su tarjeta de seguro médico (knjižica) y una derivación (uput) de su médico de cabecera. No se requiere derivación para urgencias."
+insurance.fond.p3: "Para los residentes asegurados no hay costes adicionales — el tratamiento es gratuito dentro de los servicios contratados."
+
+insurance.eu.title: "Tarjeta Sanitaria Europea — TSE"
+insurance.eu.p1: "Los ciudadanos de la UE/EEE pueden usar la Tarjeta Sanitaria Europea (TSE). Cubre la atención médica de urgencia y los tratamientos médicamente necesarios durante su estancia."
+insurance.eu.p2: "La TSE no cubre: procedimientos programados, repatriación ni tratamientos dentales electivos. Presente su tarjeta en recepción antes de iniciar el tratamiento."
+insurance.eu.p3: "Sin tarjeta — los servicios se pagan íntegramente por adelantado y el reembolso se solicita en su país de origen."
+
+insurance.private.title: "Seguro Privado"
+insurance.private.p1: "El hospital acepta seguros médicos privados. Con algunas compañías es posible la facturación directa; en otros casos, se paga por adelantado y se solicita el reembolso."
+insurance.private.p2: "Traiga la documentación de su póliza y un documento de identidad o pasaporte válido. Contacte con la recepción del hospital para la autorización previa."
+
+insurance.selfpay.title: "Sin Seguro — Pago Directo"
+insurance.selfpay.p1: "Los pacientes sin seguro pueden acceder a los servicios hospitalarios pagando según la lista de precios. La lista de precios está disponible en recepción."
+insurance.selfpay.p2: "El pago se realiza antes o al alta. Aceptamos efectivo y tarjetas bancarias."
+insurance.selfpay.p3: "La atención médica de urgencia se proporciona a todos los pacientes independientemente de su situación de seguro."
+
+laboratory.page.description: "Laboratorio del Hospital General de Kotor — tipos de análisis, preparación, horarios, resultados y portal eZdravlje."
+laboratory.badge: "Laboratorio"
+laboratory.title: "Laboratorio"
+laboratory.subtitle: "Tipos de análisis, preparación, horarios de atención y cómo obtener sus resultados."
+
+laboratory.tests.title: "Tipos de Análisis"
+laboratory.tests.p1: "Hematología (hemograma completo, coagulación, grupo sanguíneo), bioquímica (glucosa, lípidos, función hepática y renal, electrolitos) y análisis de orina."
+laboratory.tests.p2: "Análisis adicionales disponibles con derivación del médico especialista."
+
+laboratory.preparation.title: "Preparación"
+laboratory.preparation.p1: "Los análisis de sangre requieren ayuno (8–12 horas sin comer, se permite agua). Se recomienda la extracción matutina (07:00–09:00)."
+laboratory.preparation.p2: "Traiga su derivación y tarjeta de seguro médico. Informe al personal sobre los medicamentos que toma."
+
+laboratory.hours.title: "Horario de Atención"
+laboratory.hours.p1: "Lun–vie 07:00–15:00. Extracción de sangre: 07:00–09:00. Laboratorio de urgencias: 24/7 a través del servicio de urgencias."
+laboratory.hours.p2: "No se necesita cita para análisis de sangre de rutina."
+
+laboratory.results.title: "Resultados"
+laboratory.results.p1: "Resultados de rutina: el mismo día o el siguiente día hábil. Análisis especializados: 3–5 días hábiles."
+laboratory.results.p2: "Resultados disponibles a través del portal eZdravlje o en recepción. Los resultados urgentes se comunican directamente al médico que derivó al paciente."
+
+laboratory.ezdravlje.title: "Portal eZdravlje"
+laboratory.ezdravlje.p1: "Portal nacional de salud para acceder a resultados de análisis. Regístrese con su JMBG y número de tarjeta de seguro médico."
+laboratory.ezdravlje.p2: "Consulte resultados de laboratorio, derivaciones y recetas en ezdravlje.me."
+
+meljine.page.description: "Filial Meljine — servicios de rehabilitación, fisioterapia, ubicación, horarios y contacto."
+meljine.badge: "Filial Meljine"
+meljine.title: "Filial Meljine"
+meljine.subtitle: "Centro de rehabilitación del Hospital General de Kotor en Herceg Novi."
+
+meljine.rehabilitation.title: "Servicios de Rehabilitación"
+meljine.rehabilitation.p1: "La filial ofrece rehabilitación hospitalaria y ambulatoria: fisioterapia, kinesiterapia, electroterapia, hidroterapia y programas de recuperación postoperatoria y postraumática."
+meljine.rehabilitation.p2: "La admisión para rehabilitación requiere derivación del médico de cabecera o especialista. Los programas se adaptan a las necesidades individuales de cada paciente."
+
+meljine.location.title: "Ubicación"
+meljine.location.p1: "Meljine, Herceg Novi. El centro se encuentra en la orilla de la bahía de Kotor, en un entorno tranquilo ideal para la recuperación."
+meljine.location.p2: "Desde el hospital principal en Škaljari, Kotor — 30 km por la carretera principal a través de Risan. Desde el centro de Herceg Novi — 3 km."
+
+meljine.hours.title: "Horario de Atención"
+meljine.hours.p1: "Hospitalización: 24/7. Rehabilitación ambulatoria: lun–vie 07:00–15:00."
+meljine.hours.p2: "Los servicios ambulatorios requieren cita previa. La hospitalización requiere derivación médica."
+
+meljine.contact.title: "Contacto"
+meljine.contact.p1: "Teléfono: +382 31 672 272. Dirección: Meljine, Herceg Novi, Montenegro."
+meljine.contact.p2: "Para información sobre admisión y programación de rehabilitación, contacte la recepción de la filial."
 
 patients.back: "Volver al inicio"
 

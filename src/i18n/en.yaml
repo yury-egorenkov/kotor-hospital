@@ -142,6 +142,20 @@ about.project.expansion.desc: "New capacity, modern equipment and renovated faci
 about.project.teledoc.title: "TELE.DOC — EU Project, €1.116M"
 about.project.teledoc.desc: "Development of telemedicine and digital healthcare in the cross-border region."
 
+about.page.description: "About General Hospital Kotor — history, mission, projects, leadership and Meljine branch."
+about.subtitle: "A public health institution providing medical care to the residents of the municipalities of Kotor, Tivat and Herceg Novi."
+about.mission.title: "Mission"
+about.mission.desc: "General Hospital Kotor is the central hospital facility for the Bay of Kotor region. Our mission is to provide high-quality, accessible and modern healthcare to over 70,000 residents of three coastal municipalities."
+about.projects.title: "Projects"
+about.meljine.title: "Meljine Branch"
+about.meljine.desc: "The branch facility in Meljine, Herceg Novi, provides rehabilitation services and physical therapy. It complements the capacity of the main hospital in Škaljari."
+about.more: "More details"
+about.gallery.title: "Our Hospital"
+about.gallery.building: "Main hospital building, Škaljari"
+about.gallery.main: "Kotor General Hospital"
+about.gallery.expansion: "Expansion project — clinical hospital center"
+about.gallery.meljine: "Meljine branch, Herceg Novi"
+
 leadership.badge: "Management"
 leadership.title: "Leadership"
 leadership.director: "Hospital Director"
@@ -181,6 +195,9 @@ contact.directions.tivat.desc: "Main road Tivat–Kotor, 8 km. The hospital is a
 contact.directions.hn.title: "From Herceg Novi"
 contact.directions.hn.desc: "Main road through Risan, 30 km. Alternatively: Meljine branch for rehabilitation."
 contact.map.title: "Hospital location on map"
+contact.page.description: "Contact information, working hours, address and directions to Kotor General Hospital."
+contact.subtitle: "Address, phone, working hours and how to reach the hospital."
+contact.more: "More details"
 
 footer.brand.desc: "Public health institution General Hospital Kotor. Healthcare for the municipalities of Kotor, Tivat and Herceg Novi."
 footer.nav: "Navigation"
@@ -226,6 +243,78 @@ patients.insurance.fond: "The hospital has a contract with the Health Insurance 
 patients.insurance.eu: "EU patients can use the European Health Insurance Card (EHIC)"
 patients.insurance.foreign: "For foreign nationals — private health insurance or out-of-pocket payment"
 patients.insurance.prices: "Price list available at the hospital reception"
+patients.insurance.summary: "The hospital accepts patients with public, European and private insurance, as well as self-pay patients."
+patients.insurance.more: "More about insurance"
+
+insurance.page.description: "Health insurance at Kotor General Hospital — Public Fund, EHIC, private insurance and self-pay."
+insurance.badge: "Insurance"
+insurance.title: "Health Insurance"
+insurance.subtitle: "What types of insurance we accept and what you need to know before your visit."
+
+insurance.fond.title: "Health Insurance Fund"
+insurance.fond.p1: "Kotor General Hospital has a contract with the Health Insurance Fund of Montenegro. Covered services include: emergency care, inpatient and outpatient treatment, diagnostics and rehabilitation."
+insurance.fond.p2: "You will need your health insurance card (knjižica) and a referral (uput) from your GP. Referrals are not required for emergencies."
+insurance.fond.p3: "There are no out-of-pocket costs for insured residents — treatment is free within contracted services."
+
+insurance.eu.title: "European Health Insurance Card — EHIC"
+insurance.eu.p1: "EU/EEA citizens can use the European Health Insurance Card (EHIC). It covers emergency medical care and medically necessary treatment during your stay."
+insurance.eu.p2: "EHIC does not cover: planned procedures, repatriation, or elective dental care. Present your card at reception before treatment begins."
+insurance.eu.p3: "Without a card — services must be paid in full upfront, and reimbursement can be claimed in your home country."
+
+insurance.private.title: "Private Insurance"
+insurance.private.p1: "The hospital accepts private health insurance. Direct billing is available with select companies; otherwise, pay upfront and claim reimbursement from your insurer."
+insurance.private.p2: "Bring your insurance policy documents and a valid ID or passport. Contact the hospital reception for pre-authorization."
+
+insurance.selfpay.title: "No Insurance — Self-Pay"
+insurance.selfpay.p1: "Uninsured patients can access hospital services by paying according to the price list. The price list is available at reception."
+insurance.selfpay.p2: "Payment is due before or at discharge. We accept cash and bank cards."
+insurance.selfpay.p3: "Emergency medical care is provided to all patients regardless of insurance status."
+
+laboratory.page.description: "Laboratory at Kotor General Hospital — test types, preparation, working hours, results and eZdravlje portal."
+laboratory.badge: "Laboratory"
+laboratory.title: "Laboratory"
+laboratory.subtitle: "Test types, preparation instructions, working hours and how to get your results."
+
+laboratory.tests.title: "Test Types"
+laboratory.tests.p1: "Haematology (complete blood count, coagulation, blood typing), biochemistry (glucose, lipids, liver and kidney function, electrolytes) and urine analysis."
+laboratory.tests.p2: "Additional tests available upon specialist referral."
+
+laboratory.preparation.title: "Preparation for Testing"
+laboratory.preparation.p1: "Blood tests require fasting (8–12 hours without food, water is permitted). Morning sample collection is recommended (07:00–09:00)."
+laboratory.preparation.p2: "Bring your referral and health insurance card. Inform staff about any medications you are taking."
+
+laboratory.hours.title: "Working Hours"
+laboratory.hours.p1: "Mon–Fri 07:00–15:00. Blood collection: 07:00–09:00. Emergency lab: 24/7 through the Emergency department."
+laboratory.hours.p2: "No appointment needed for routine bloodwork."
+
+laboratory.results.title: "Results"
+laboratory.results.p1: "Routine results: same day or next business day. Specialized tests: 3–5 business days."
+laboratory.results.p2: "Results available via the eZdravlje portal or at reception. Urgent results are communicated directly to the referring physician."
+
+laboratory.ezdravlje.title: "eZdravlje Portal"
+laboratory.ezdravlje.p1: "National health portal for accessing test results. Register with your JMBG and health card number."
+laboratory.ezdravlje.p2: "View lab results, referrals and prescriptions at ezdravlje.me."
+
+meljine.page.description: "Meljine Branch — rehabilitation services, physical therapy, location, working hours and contact."
+meljine.badge: "Meljine Branch"
+meljine.title: "Meljine Branch"
+meljine.subtitle: "Rehabilitation centre of Kotor General Hospital in Herceg Novi."
+
+meljine.rehabilitation.title: "Rehabilitation Services"
+meljine.rehabilitation.p1: "The branch provides inpatient and outpatient rehabilitation: physical therapy, kinesitherapy, electrotherapy, hydrotherapy and post-operative and post-injury recovery programmes."
+meljine.rehabilitation.p2: "Admission for rehabilitation requires a referral from your GP or specialist. Programmes are tailored to each patient's individual needs."
+
+meljine.location.title: "Location"
+meljine.location.p1: "Meljine, Herceg Novi. The facility is located on the shore of the Bay of Kotor, in a peaceful environment ideal for recovery."
+meljine.location.p2: "From the main hospital in Škaljari, Kotor — 30 km via the main road through Risan. From Herceg Novi centre — 3 km."
+
+meljine.hours.title: "Working Hours"
+meljine.hours.p1: "Inpatient ward: 24/7. Outpatient rehabilitation: Mon–Fri 07:00–15:00."
+meljine.hours.p2: "Outpatient services require an appointment. Inpatient admission requires a referral."
+
+meljine.contact.title: "Contact"
+meljine.contact.p1: "Phone: +382 31 672 272. Address: Meljine, Herceg Novi, Montenegro."
+meljine.contact.p2: "For admission information and rehabilitation scheduling, contact the branch reception."
 
 patients.back: "Back to home"
 

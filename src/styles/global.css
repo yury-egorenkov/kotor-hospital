@@ -2,54 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll reveal — base state hidden, JS adds .visible */
 .reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
 }
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  @apply opacity-100 translate-y-0;
 }
 
+/* Accordion — JS toggles .open / .rotated */
 .accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
+  @apply max-h-0 overflow-hidden transition-all duration-300 ease-out;
 }
 .accordion-body.open {
   max-height: 600px;
 }
-
 .accordion-icon {
-  transition: transform 0.3s ease;
+  @apply transition-transform duration-300 ease-out;
 }
 .accordion-icon.rotated {
-  transform: rotate(180deg);
+  @apply rotate-180;
 }
 
-.card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card-hover:hover {
-  transform: translateY(-2px);
-}
-
+/* Mobile menu — JS toggles .open */
 .mobile-overlay {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  @apply opacity-0 invisible transition-all duration-300 ease-out;
 }
 .mobile-overlay.open {
-  opacity: 1;
-  visibility: visible;
+  @apply opacity-100 visible;
 }
 .mobile-overlay .mobile-panel {
-  transform: translateY(-12px);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  @apply -translate-y-3 opacity-0 transition-all duration-300 ease-out;
 }
 .mobile-overlay.open .mobile-panel {
-  transform: translateY(0);
-  opacity: 1;
+  @apply translate-y-0 opacity-100;
 }

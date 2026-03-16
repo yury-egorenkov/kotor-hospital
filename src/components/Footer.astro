@@ -30,8 +30,8 @@ const { lang } = Astro.props;
         <ul class="space-y-2.5">
           <li><a href="#departments" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.departments')}</a></li>
           <li><a href="#clinics" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.clinics')}</a></li>
-          <li><a href="#about" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.about')}</a></li>
-          <li><a href="#contact" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.contact')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/about/'} class="text-sm hover:text-white transition-colors">{t(lang, 'nav.about')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/contact/'} class="text-sm hover:text-white transition-colors">{t(lang, 'nav.contact')}</a></li>
           <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/patients/'} class="text-sm hover:text-white transition-colors">{t(lang, 'nav.patients')}</a></li>
         </ul>
       </div>

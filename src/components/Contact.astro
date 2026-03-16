@@ -88,13 +88,20 @@ const hoursRows = [
       </div>
     </div>
 
+    <!-- More link -->
+    <div class="mt-10 reveal">
+      <a href={(lang === 'cnr' ? '' : `/${lang}`) + '/contact/'} class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors">
+        {t(lang, 'contact.more')}
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+
     <!-- Map -->
     <div class="mt-12 reveal">
       <div class="rounded-2xl overflow-hidden border border-stone-200">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.8!2d18.7681!3d42.4247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134c3307fda96845%3A0x8a6788e3e5e3a0a9!2z0J7Qv9GI0YLQsCDQsdC-0LvQvdC40YbQsCDQmtC-0YLQvtGA!5e0!3m2!1ssr!2sme!4v1710000000000"
-          class="w-full aspect-[21/9]"
-          style="border:0;"
+          class="w-full aspect-[21/9] border-0"
           allowfullscreen
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"

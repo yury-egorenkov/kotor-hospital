@@ -142,6 +142,20 @@ about.project.expansion.desc: "Novi kapaciteti, savremena oprema i renovirani pr
 about.project.teledoc.title: "TELE.DOC — EU projekat, €1,116M"
 about.project.teledoc.desc: "Razvoj telemedicine i digitalne zdravstvene zaštite u prekograničnom regionu."
 
+about.page.description: "O Opštoj bolnici Kotor — istorija, misija, projekti, rukovodstvo i filijala Meljine."
+about.subtitle: "Javna zdravstvena ustanova koja pruža medicinsku zaštitu stanovnicima opština Kotor, Tivat i Herceg Novi."
+about.mission.title: "Misija"
+about.mission.desc: "Opšta bolnica Kotor je centralna bolnička ustanova za Bokokotorski zaliv. Naša misija je pružanje kvalitetne, dostupne i savremene zdravstvene zaštite za preko 70.000 stanovnika tri priobalne opštine."
+about.projects.title: "Projekti"
+about.meljine.title: "Filijala Meljine"
+about.meljine.desc: "Filijalni objekat u Meljinama, Herceg Novi, pruža rehabilitacione usluge i fizikalnu terapiju. Objekat dopunjuje kapacitete glavne bolnice u Škaljarima."
+about.more: "Detaljnije"
+about.gallery.title: "Naša bolnica"
+about.gallery.building: "Glavna zgrada bolnice, Škaljari"
+about.gallery.main: "Opšta bolnica Kotor"
+about.gallery.expansion: "Projekat proširenja — kliničko-bolnički centar"
+about.gallery.meljine: "Filijala Meljine, Herceg Novi"
+
 leadership.badge: "Upravljanje"
 leadership.title: "Rukovodstvo"
 leadership.director: "Direktor bolnice"
@@ -181,6 +195,9 @@ contact.directions.tivat.desc: "Magistralni put Tivat–Kotor, 8 km. Bolnica je 
 contact.directions.hn.title: "Iz Herceg Novog"
 contact.directions.hn.desc: "Magistralni put kroz Risan, 30 km. Alternativno: filijala Meljine za rehabilitaciju."
 contact.map.title: "Lokacija bolnice na mapi"
+contact.page.description: "Kontakt informacije, radno vrijeme, adresa i uputstva za dolazak do Opšte bolnice Kotor."
+contact.subtitle: "Adresa, telefon, radno vrijeme i kako doći do bolnice."
+contact.more: "Detaljnije"
 
 footer.brand.desc: "Javna zdravstvena ustanova opšta bolnica Kotor. Zdravstvena zaštita za opštine Kotor, Tivat i Herceg Novi."
 footer.nav: "Navigacija"
@@ -226,6 +243,78 @@ patients.insurance.fond: "Bolnica ima ugovor sa Fondom za zdravstveno osiguranje
 patients.insurance.eu: "Pacijenti iz EU mogu koristiti Evropsku karticu zdravstvenog osiguranja (EKZO)"
 patients.insurance.foreign: "Za strane državljane — privatno zdravstveno osiguranje ili plaćanje usluga"
 patients.insurance.prices: "Cjenovnik usluga dostupan na recepciji bolnice"
+patients.insurance.summary: "Bolnica prima pacijente sa obaveznim, evropskim i privatnim osiguranjem, kao i samoplatce."
+patients.insurance.more: "Detaljnije o osiguranju"
+
+insurance.page.description: "Zdravstveno osiguranje u Opštoj bolnici Kotor — Fond, EKZO, privatno osiguranje i samoplata."
+insurance.badge: "Osiguranje"
+insurance.title: "Zdravstveno osiguranje"
+insurance.subtitle: "Koje vrste osiguranja prihvatamo i šta treba da znate prije dolaska."
+
+insurance.fond.title: "Fond za zdravstveno osiguranje"
+insurance.fond.p1: "Opšta bolnica Kotor ima ugovor sa Fondom za zdravstveno osiguranje Crne Gore. Pokriveni su: hitna pomoć, bolničko i ambulantno liječenje, dijagnostika i rehabilitacija."
+insurance.fond.p2: "Potrebno je ponijeti zdravstvenu knjižicu i uput od izabranog ljekara. Za hitne slučajeve uput nije potreban."
+insurance.fond.p3: "Za osiguranike Fonda nema dodatnih troškova — liječenje je besplatno u okviru ugovorenih usluga."
+
+insurance.eu.title: "Evropska kartica — EKZO / EHIC"
+insurance.eu.p1: "Građani EU/EEA mogu koristiti Evropsku karticu zdravstvenog osiguranja (EKZO/EHIC). Pokriveni su hitna medicinska pomoć i medicinski neophodno liječenje tokom boravka."
+insurance.eu.p2: "EKZO ne pokriva: planirane zahvate, repatrijaciju, elektivnu stomatologiju. Karticu predajte na recepciji prije početka liječenja."
+insurance.eu.p3: "Bez kartice — usluge se plaćaju u cjelosti, a refundacija se traži u matičnoj zemlji."
+
+insurance.private.title: "Privatno osiguranje"
+insurance.private.p1: "Bolnica prihvata privatno zdravstveno osiguranje. Sa pojedinim kompanijama moguć je direktan obračun, dok se kod ostalih plaća unaprijed i traži refundacija."
+insurance.private.p2: "Ponesite polisu osiguranja i ličnu kartu ili pasoš. Za prethodno odobrenje kontaktirajte recepciju bolnice."
+
+insurance.selfpay.title: "Bez osiguranja — samoplata"
+insurance.selfpay.p1: "Pacijenti bez osiguranja mogu koristiti usluge bolnice uz plaćanje po cjenovniku. Cjenovnik je dostupan na recepciji."
+insurance.selfpay.p2: "Plaćanje se vrši prije ili prilikom otpusta. Prihvatamo gotovinu i platne kartice."
+insurance.selfpay.p3: "Hitna medicinska pomoć pruža se svim pacijentima bez obzira na status osiguranja."
+
+laboratory.page.description: "Laboratorija Opšte bolnice Kotor — vrste analiza, priprema, radno vrijeme, rezultati i eZdravlje portal."
+laboratory.badge: "Laboratorija"
+laboratory.title: "Laboratorija"
+laboratory.subtitle: "Vrste analiza, priprema za pregled, radno vrijeme i preuzimanje rezultata."
+
+laboratory.tests.title: "Vrste analiza"
+laboratory.tests.p1: "Hematologija (kompletna krvna slika, koagulacija, krvna grupa), biohemija (glukoza, lipidi, funkcija jetre i bubrega, elektroliti) i analiza urina."
+laboratory.tests.p2: "Dodatne analize dostupne po upućivanju ljekara specijaliste."
+
+laboratory.preparation.title: "Priprema za analizu"
+laboratory.preparation.p1: "Krv se daje natašte (8–12 h bez hrane, voda dozvoljena). Preporučuje se jutarnje uzimanje uzoraka (07–09 h)."
+laboratory.preparation.p2: "Ponesite uput i zdravstvenu knjižicu. Obavijestite osoblje o lijekovima koje koristite."
+
+laboratory.hours.title: "Radno vrijeme"
+laboratory.hours.p1: "Pon–pet 07:00–15:00. Uzimanje krvi: 07:00–09:00. Hitna laboratorija: 24/7 preko Odjeljenja hitne pomoći."
+laboratory.hours.p2: "Za rutinske krvne analize nije potrebno zakazivanje."
+
+laboratory.results.title: "Rezultati"
+laboratory.results.p1: "Rutinski rezultati: isti dan ili sljedeći radni dan. Specijalizovane analize: 3–5 radnih dana."
+laboratory.results.p2: "Rezultati dostupni putem portala eZdravlje ili na recepciji. Hitni rezultati se šalju direktno ljekaru koji je uputio pacijenta."
+
+laboratory.ezdravlje.title: "Portal eZdravlje"
+laboratory.ezdravlje.p1: "Nacionalni zdravstveni portal za pristup rezultatima analiza. Registracija putem JMBG i broja zdravstvene knjižice."
+laboratory.ezdravlje.p2: "Pregledajte rezultate laboratorijskih analiza, upute i recepte na ezdravlje.me."
+
+meljine.page.description: "Filijala Meljine — rehabilitacione usluge, fizikalna terapija, lokacija, radno vrijeme i kontakt."
+meljine.badge: "Filijala Meljine"
+meljine.title: "Filijala Meljine"
+meljine.subtitle: "Rehabilitacioni centar Opšte bolnice Kotor u Herceg Novom."
+
+meljine.rehabilitation.title: "Rehabilitacione usluge"
+meljine.rehabilitation.p1: "Filijala pruža stacionarnu i ambulantnu rehabilitaciju: fizikalna terapija, kineziterapija, elektroterapija, hidroterapija i program oporavka nakon operacija i povreda."
+meljine.rehabilitation.p2: "Prijem na rehabilitaciju vrši se sa uputom izabranog ljekara ili ljekara specijaliste. Program se prilagođava individualnim potrebama pacijenta."
+
+meljine.location.title: "Lokacija"
+meljine.location.p1: "Meljine, Herceg Novi. Objekat se nalazi na obali Bokokotorskog zaliva, u mirnom okruženju pogodnom za oporavak."
+meljine.location.p2: "Od glavne bolnice u Škaljari, Kotor — 30 km glavnim putem kroz Risan. Iz centra Herceg Novog — 3 km."
+
+meljine.hours.title: "Radno vrijeme"
+meljine.hours.p1: "Stacionar: 24/7. Ambulantna rehabilitacija: pon–pet 07:00–15:00."
+meljine.hours.p2: "Za ambulantne usluge potrebno je zakazivanje. Za stacionarni prijem potreban je uput."
+
+meljine.contact.title: "Kontakt"
+meljine.contact.p1: "Telefon: +382 31 672 272. Adresa: Meljine, Herceg Novi, Crna Gora."
+meljine.contact.p2: "Za informacije o prijemu i zakazivanje rehabilitacije kontaktirajte recepciju filijale."
 
 patients.back: "Nazad na početnu"
 

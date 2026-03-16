@@ -74,6 +74,14 @@ const badgeIcon = '<svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 
             </div>
           </div>
         </div>
+
+        <!-- More link -->
+        <div class="mt-4">
+          <a href={(lang === 'cnr' ? '' : `/${lang}`) + '/about/'} class="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors">
+            {t(lang, 'about.more')}
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>

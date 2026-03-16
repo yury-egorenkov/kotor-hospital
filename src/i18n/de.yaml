@@ -142,6 +142,20 @@ about.project.expansion.desc: "Neue Kapazitäten, moderne Ausstattung und renovi
 about.project.teledoc.title: "TELE.DOC — EU-Projekt, 1,116 Mio. €"
 about.project.teledoc.desc: "Entwicklung der Telemedizin und digitalen Gesundheitsversorgung in der grenzüberschreitenden Region."
 
+about.page.description: "Über das Allgemeine Krankenhaus Kotor — Geschichte, Mission, Projekte, Leitung und Filiale Meljine."
+about.subtitle: "Öffentliche Gesundheitseinrichtung für die medizinische Versorgung der Gemeinden Kotor, Tivat und Herceg Novi."
+about.mission.title: "Mission"
+about.mission.desc: "Das Allgemeine Krankenhaus Kotor ist die zentrale Krankenhauseinrichtung für die Region der Bucht von Kotor. Unsere Mission ist die Bereitstellung einer qualitativ hochwertigen, zugänglichen und modernen Gesundheitsversorgung für über 70.000 Einwohner dreier Küstengemeinden."
+about.projects.title: "Projekte"
+about.meljine.title: "Filiale Meljine"
+about.meljine.desc: "Die Filiale in Meljine, Herceg Novi, bietet Rehabilitationsleistungen und Physiotherapie an. Sie ergänzt die Kapazitäten des Hauptkrankenhauses in Škaljari."
+about.more: "Mehr erfahren"
+about.gallery.title: "Unser Krankenhaus"
+about.gallery.building: "Hauptgebäude des Krankenhauses, Škaljari"
+about.gallery.main: "Allgemeines Krankenhaus Kotor"
+about.gallery.expansion: "Erweiterungsprojekt — klinisches Krankenhauszentr."
+about.gallery.meljine: "Filiale Meljine, Herceg Novi"
+
 leadership.badge: "Leitung"
 leadership.title: "Krankenhausleitung"
 leadership.director: "Krankenhausdirektor"
@@ -181,6 +195,9 @@ contact.directions.tivat.desc: "Hauptstraße Tivat–Kotor, 8 km. Das Krankenhau
 contact.directions.hn.title: "Aus Herceg Novi"
 contact.directions.hn.desc: "Hauptstraße über Risan, 30 km. Alternativ: Filiale Meljine für Rehabilitation."
 contact.map.title: "Krankenhausstandort auf der Karte"
+contact.page.description: "Kontaktinformationen, Öffnungszeiten, Adresse und Anfahrt zum Allgemeinen Krankenhaus Kotor."
+contact.subtitle: "Adresse, Telefon, Öffnungszeiten und Anfahrt zum Krankenhaus."
+contact.more: "Mehr erfahren"
 
 footer.brand.desc: "Öffentliche Gesundheitseinrichtung Allgemeines Krankenhaus Kotor. Medizinische Versorgung für die Gemeinden Kotor, Tivat und Herceg Novi."
 footer.nav: "Navigation"
@@ -226,6 +243,78 @@ patients.insurance.fond: "Das Krankenhaus hat einen Vertrag mit dem Krankenversi
 patients.insurance.eu: "EU-Patienten können die Europäische Krankenversicherungskarte (EHIC) verwenden"
 patients.insurance.foreign: "Für ausländische Staatsangehörige — private Krankenversicherung oder Selbstzahlung"
 patients.insurance.prices: "Preisliste an der Rezeption des Krankenhauses erhältlich"
+patients.insurance.summary: "Das Krankenhaus behandelt Patienten mit gesetzlicher, europäischer und privater Versicherung sowie Selbstzahler."
+patients.insurance.more: "Mehr zur Versicherung"
+
+insurance.page.description: "Krankenversicherung im Allgemeinen Krankenhaus Kotor — Gesetzliche Versicherung, EHIC, Privatversicherung und Selbstzahlung."
+insurance.badge: "Versicherung"
+insurance.title: "Krankenversicherung"
+insurance.subtitle: "Welche Versicherungsarten wir akzeptieren und was Sie vor Ihrem Besuch wissen sollten."
+
+insurance.fond.title: "Gesetzliche Krankenversicherung"
+insurance.fond.p1: "Das Allgemeine Krankenhaus Kotor hat einen Vertrag mit dem Krankenversicherungsfonds Montenegros. Abgedeckt sind: Notfallversorgung, stationäre und ambulante Behandlung, Diagnostik und Rehabilitation."
+insurance.fond.p2: "Bringen Sie Ihre Versicherungskarte (knjižica) und eine Überweisung (uput) Ihres Hausarztes mit. Für Notfälle ist keine Überweisung erforderlich."
+insurance.fond.p3: "Für versicherte Einwohner entstehen keine zusätzlichen Kosten — die Behandlung ist im Rahmen der Vertragsleistungen kostenlos."
+
+insurance.eu.title: "Europäische Krankenversicherungskarte — EHIC"
+insurance.eu.p1: "EU/EWR-Bürger können die Europäische Krankenversicherungskarte (EHIC) verwenden. Abgedeckt sind Notfallversorgung und medizinisch notwendige Behandlungen während Ihres Aufenthalts."
+insurance.eu.p2: "Die EHIC deckt nicht ab: geplante Eingriffe, Rückführung, elektive Zahnbehandlungen. Legen Sie Ihre Karte vor Behandlungsbeginn an der Rezeption vor."
+insurance.eu.p3: "Ohne Karte — Leistungen müssen vollständig im Voraus bezahlt werden, die Erstattung erfolgt im Heimatland."
+
+insurance.private.title: "Privatversicherung"
+insurance.private.p1: "Das Krankenhaus akzeptiert private Krankenversicherungen. Mit ausgewählten Unternehmen ist eine Direktabrechnung möglich; bei anderen erfolgt die Zahlung im Voraus mit anschließender Erstattung."
+insurance.private.p2: "Bringen Sie Ihre Versicherungsunterlagen und einen gültigen Ausweis oder Reisepass mit. Für eine Vorabgenehmigung wenden Sie sich an die Rezeption."
+
+insurance.selfpay.title: "Ohne Versicherung — Selbstzahlung"
+insurance.selfpay.p1: "Patienten ohne Versicherung können Krankenhausleistungen gegen Bezahlung gemäß Preisliste nutzen. Die Preisliste ist an der Rezeption erhältlich."
+insurance.selfpay.p2: "Die Zahlung erfolgt vor oder bei der Entlassung. Wir akzeptieren Bargeld und Bankkarten."
+insurance.selfpay.p3: "Notfallmedizinische Versorgung wird allen Patienten unabhängig vom Versicherungsstatus gewährt."
+
+laboratory.page.description: "Labor des Allgemeinen Krankenhauses Kotor — Testarten, Vorbereitung, Öffnungszeiten, Ergebnisse und eZdravlje-Portal."
+laboratory.badge: "Labor"
+laboratory.title: "Labor"
+laboratory.subtitle: "Testarten, Vorbereitungshinweise, Öffnungszeiten und Erhalt Ihrer Ergebnisse."
+
+laboratory.tests.title: "Testarten"
+laboratory.tests.p1: "Hämatologie (großes Blutbild, Gerinnung, Blutgruppe), Biochemie (Glukose, Lipide, Leber- und Nierenfunktion, Elektrolyte) und Urinanalyse."
+laboratory.tests.p2: "Weitere Untersuchungen auf Überweisung durch Fachärzte möglich."
+
+laboratory.preparation.title: "Vorbereitung"
+laboratory.preparation.p1: "Blutentnahme nüchtern (8–12 Stunden ohne Essen, Wasser erlaubt). Morgendliche Probenentnahme empfohlen (07:00–09:00)."
+laboratory.preparation.p2: "Bringen Sie Ihre Überweisung und Krankenversicherungskarte mit. Informieren Sie das Personal über eingenommene Medikamente."
+
+laboratory.hours.title: "Öffnungszeiten"
+laboratory.hours.p1: "Mo–Fr 07:00–15:00. Blutentnahme: 07:00–09:00. Notfalllabor: rund um die Uhr über die Notaufnahme."
+laboratory.hours.p2: "Für routinemäßige Blutuntersuchungen ist keine Terminvereinbarung erforderlich."
+
+laboratory.results.title: "Ergebnisse"
+laboratory.results.p1: "Routineergebnisse: am selben Tag oder am nächsten Werktag. Spezialuntersuchungen: 3–5 Werktage."
+laboratory.results.p2: "Ergebnisse über das eZdravlje-Portal oder an der Rezeption erhältlich. Dringende Ergebnisse werden direkt an den überweisenden Arzt übermittelt."
+
+laboratory.ezdravlje.title: "eZdravlje-Portal"
+laboratory.ezdravlje.p1: "Nationales Gesundheitsportal für den Zugang zu Untersuchungsergebnissen. Registrierung mit JMBG und Krankenversicherungskartennummer."
+laboratory.ezdravlje.p2: "Laborergebnisse, Überweisungen und Rezepte einsehen auf ezdravlje.me."
+
+meljine.page.description: "Filiale Meljine — Rehabilitationsleistungen, Physiotherapie, Standort, Öffnungszeiten und Kontakt."
+meljine.badge: "Filiale Meljine"
+meljine.title: "Filiale Meljine"
+meljine.subtitle: "Rehabilitationszentrum des Allgemeinen Krankenhauses Kotor in Herceg Novi."
+
+meljine.rehabilitation.title: "Rehabilitationsleistungen"
+meljine.rehabilitation.p1: "Die Filiale bietet stationäre und ambulante Rehabilitation: Physiotherapie, Kinesiotherapie, Elektrotherapie, Hydrotherapie sowie Programme zur Genesung nach Operationen und Verletzungen."
+meljine.rehabilitation.p2: "Die Aufnahme zur Rehabilitation erfolgt mit Überweisung des Hausarztes oder Facharztes. Das Programm wird individuell auf die Bedürfnisse des Patienten abgestimmt."
+
+meljine.location.title: "Standort"
+meljine.location.p1: "Meljine, Herceg Novi. Die Einrichtung liegt am Ufer der Bucht von Kotor, in einer ruhigen Umgebung, die ideal für die Genesung ist."
+meljine.location.p2: "Vom Hauptkrankenhaus in Škaljari, Kotor — 30 km über die Hauptstraße durch Risan. Vom Zentrum Herceg Novis — 3 km."
+
+meljine.hours.title: "Öffnungszeiten"
+meljine.hours.p1: "Stationärer Bereich: rund um die Uhr. Ambulante Rehabilitation: Mo–Fr 07:00–15:00."
+meljine.hours.p2: "Ambulante Leistungen nur nach Terminvereinbarung. Für die stationäre Aufnahme ist eine Überweisung erforderlich."
+
+meljine.contact.title: "Kontakt"
+meljine.contact.p1: "Telefon: +382 31 672 272. Adresse: Meljine, Herceg Novi, Montenegro."
+meljine.contact.p2: "Für Aufnahmeinformationen und Rehabilitationstermine wenden Sie sich an die Rezeption der Filiale."
 
 patients.back: "Zurück zur Startseite"
 

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import MobileMenu from '../../../components/MobileMenu.astro';
+import MeljinePage from '../../../components/MeljinePage.astro';
+import Footer from '../../../components/Footer.astro';
+
+const lang = 'tr' as const;
+---
+
+<BaseLayout lang={lang}>
+  <Header lang={lang} />
+  <MobileMenu lang={lang} />
+  <MeljinePage lang={lang} />
+  <Footer lang={lang} />
+</BaseLayout>
