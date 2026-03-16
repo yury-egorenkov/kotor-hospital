@@ -22,14 +22,17 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
 ---
 
 <main>
-  <section class="py-12 sm:py-20 lg:py-24">
+  <!-- Gradient page header -->
+  <div class="bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="mb-8 sm:mb-12">
-        <SectionBadge text={t(lang, 'contact.badge')} icon={badgeIcon} />
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'contact.title')}</h1>
-        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-stone-500">{t(lang, 'contact.subtitle')}</p>
-      </div>
+      <SectionBadge text={t(lang, 'contact.badge')} icon={badgeIcon} />
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">{t(lang, 'contact.title')}</h1>
+      <p class="mt-3 sm:mt-4 text-base sm:text-lg text-emerald-200/80">{t(lang, 'contact.subtitle')}</p>
+    </div>
+  </div>
+
+  <section class="py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="space-y-8 sm:space-y-12">
         <!-- Contact info -->
@@ -41,20 +44,20 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'contact.badge')}</h2>
           </div>
           <div class="grid sm:grid-cols-2 gap-4">
-            <div class="bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+            <div class="bg-white border border-stone-100 rounded-xl p-4 sm:p-5 shadow-sm border-l-4 border-l-emerald-500">
               <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-2">{t(lang, 'contact.address.label')}</h3>
               <p class="text-base font-semibold text-stone-900">{t(lang, 'contact.address.street')}</p>
               <p class="text-sm text-stone-600">{t(lang, 'contact.address.city')}</p>
             </div>
-            <div class="bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+            <div class="bg-white border border-stone-100 rounded-xl p-4 sm:p-5 shadow-sm border-l-4 border-l-emerald-500">
               <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-2">{t(lang, 'contact.phone.label')}</h3>
               <a href="tel:+38232325602" class="text-base font-semibold text-stone-900 hover:text-emerald-600 transition-colors">{t(lang, 'emergency.phone')}</a>
             </div>
-            <div class="bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+            <div class="bg-white border border-stone-100 rounded-xl p-4 sm:p-5 shadow-sm border-l-4 border-l-emerald-500">
               <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-2">{t(lang, 'contact.email.label')}</h3>
               <a href="mailto:obk@t-com.me" class="text-base font-semibold text-stone-900 hover:text-emerald-600 transition-colors">obk@t-com.me</a>
             </div>
-            <div class="bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+            <div class="bg-white border border-stone-100 rounded-xl p-4 sm:p-5 shadow-sm border-l-4 border-l-emerald-500">
               <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-2">{t(lang, 'contact.branch.label')}</h3>
               <p class="text-sm text-stone-600">{t(lang, 'contact.branch.address')}</p>
             </div>
@@ -69,7 +72,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'contact.hours.label')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl shadow-sm sm:rounded-2xl p-4 sm:p-6">
             <table class="w-full text-sm">
               <tbody>
                 {hoursRows.map((row) => (
@@ -92,15 +95,15 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'contact.directions.label')}</h2>
           </div>
           <div class="space-y-3">
-            <div class="bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+            <div class="bg-white border border-stone-100 rounded-xl shadow-sm p-4 sm:p-5">
               <h3 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.kotor.title')}</h3>
               <p class="text-sm text-stone-600">{t(lang, 'contact.directions.kotor.desc')}</p>
             </div>
-            <div class="bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+            <div class="bg-white border border-stone-100 rounded-xl shadow-sm p-4 sm:p-5">
               <h3 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.tivat.title')}</h3>
               <p class="text-sm text-stone-600">{t(lang, 'contact.directions.tivat.desc')}</p>
             </div>
-            <div class="bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+            <div class="bg-white border border-stone-100 rounded-xl shadow-sm p-4 sm:p-5">
               <h3 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.hn.title')}</h3>
               <p class="text-sm text-stone-600">{t(lang, 'contact.directions.hn.desc')}</p>
             </div>
@@ -109,7 +112,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
 
         <!-- Map -->
         <div>
-          <div class="rounded-2xl overflow-hidden border border-stone-200">
+          <div class="rounded-2xl overflow-hidden border border-stone-100 shadow-lg">
             <iframe
               src="https://www.google.com/maps?q=Opšta+bolnica+Kotor,+Škaljari,+Kotor,+Montenegro&z=15&output=embed"
               class="w-full aspect-[21/9] border-0"

@@ -6,6 +6,8 @@ site.og.title: "Allgemeines Krankenhaus Kotor — JZUOB Kotor"
 site.og.description: "Öffentliche Gesundheitseinrichtung Allgemeines Krankenhaus Kotor. Notaufnahme, Abteilungen, Ambulanzen, Öffnungszeiten und Kontakt."
 
 header.name: "Allgemeines Krankenhaus Kotor"
+header.name.label: "Allgemeines Krankenhaus"
+header.name.city: "Kotor"
 header.phone: "032 325 602"
 header.emergency: "Notaufnahme"
 header.emergency.short: "Notfall"

@@ -6,6 +6,8 @@ site.og.title: "Opšta bolnica Kotor — JZUOB Kotor"
 site.og.description: "Javna zdravstvena ustanova opšta bolnica Kotor. Hitna pomoć, odjeljenja, ambulante, radno vrijeme i kontakt."
 
 header.name: "Opšta bolnica Kotor"
+header.name.label: "Opšta bolnica"
+header.name.city: "Kotor"
 header.phone: "032 325 602"
 header.emergency: "Hitna pomoć"
 header.emergency.short: "Hitna"

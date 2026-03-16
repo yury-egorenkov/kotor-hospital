@@ -19,13 +19,17 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
 ---
 
 <main>
-  <section class="py-12 sm:py-20 lg:py-24">
+  <!-- Gradient page header -->
+  <div class="bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-8 sm:mb-12">
-        <SectionBadge text={t(lang, 'patients.badge')} icon={badgeIcon} />
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'patients.title')}</h1>
-        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-stone-500">{t(lang, 'patients.description')}</p>
-      </div>
+      <SectionBadge text={t(lang, 'patients.badge')} icon={badgeIcon} />
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">{t(lang, 'patients.title')}</h1>
+      <p class="mt-3 sm:mt-4 text-base sm:text-lg text-emerald-200/80">{t(lang, 'patients.description')}</p>
+    </div>
+  </div>
+
+  <section class="py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="space-y-8 sm:space-y-12">
         <!-- Documents -->
@@ -39,7 +43,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.docs.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-stone-600">
               {docItems.map((key) => (
                 <li class="flex items-start gap-2">
@@ -62,7 +66,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.rights.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-stone-50 border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-stone-600">
               {rightItems.map((key) => (
                 <li class="flex items-start gap-2">
@@ -85,7 +89,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.visiting.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-stone-600">
               {visitItems.map((key) => (
                 <li class="flex items-start gap-2">
@@ -108,7 +112,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.insurance.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-stone-50 border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <p class="text-sm sm:text-base text-stone-600 leading-relaxed">{t(lang, 'patients.insurance.summary')}</p>
             <a href={insuranceHref} class="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors">
               {t(lang, 'patients.insurance.more')}

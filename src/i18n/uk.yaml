@@ -6,6 +6,8 @@ site.og.title: "Загальна лікарня Котор — JZUOB Kotor"
 site.og.description: "Публічний медичний заклад загальна лікарня Котор. Швидка допомога, відділення, амбулаторії, графік роботи та контакти."
 
 header.name: "Загальна лікарня Котор"
+header.name.label: "Загальна лікарня"
+header.name.city: "Котор"
 header.phone: "032 325 602"
 header.emergency: "Швидка допомога"
 header.emergency.short: "Швидка"

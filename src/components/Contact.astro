@@ -19,48 +19,48 @@ const hoursRows = [
 ];
 ---
 
-<section id="contact" class="py-16 sm:py-20 lg:py-24">
+<section id="contact" class="py-16 sm:py-20 lg:py-24 bg-stone-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mb-12">
       <SectionBadge text={t(lang, 'contact.badge')} icon={badgeIcon} />
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'contact.title')}</h2>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">{t(lang, 'contact.title')}</h2>
     </div>
 
     <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
       <!-- Contact info -->
       <div class="lg:col-span-1 space-y-6">
         <div>
-          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.address.label')}</h3>
-          <p class="text-lg font-semibold text-stone-900">{t(lang, 'contact.address.street')}</p>
-          <p class="text-stone-600">{t(lang, 'contact.address.city')}</p>
+          <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-3">{t(lang, 'contact.address.label')}</h3>
+          <p class="text-lg font-semibold text-white">{t(lang, 'contact.address.street')}</p>
+          <p class="text-stone-400">{t(lang, 'contact.address.city')}</p>
         </div>
 
         <div>
-          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.phone.label')}</h3>
-          <a href="tel:+38232325602" class="text-lg font-semibold text-stone-900 hover:text-emerald-600 transition-colors">{t(lang, 'emergency.phone')}</a>
+          <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-3">{t(lang, 'contact.phone.label')}</h3>
+          <a href="tel:+38232325602" class="text-lg font-semibold text-white hover:text-emerald-400 transition-colors">{t(lang, 'emergency.phone')}</a>
         </div>
 
         <div>
-          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.email.label')}</h3>
-          <a href="mailto:obk@t-com.me" class="text-lg font-semibold text-stone-900 hover:text-emerald-600 transition-colors">obk@t-com.me</a>
+          <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-3">{t(lang, 'contact.email.label')}</h3>
+          <a href="mailto:obk@t-com.me" class="text-lg font-semibold text-white hover:text-emerald-400 transition-colors">obk@t-com.me</a>
         </div>
 
         <div>
-          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.branch.label')}</h3>
-          <p class="text-stone-600">{t(lang, 'contact.branch.address')}</p>
+          <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-3">{t(lang, 'contact.branch.label')}</h3>
+          <p class="text-stone-400">{t(lang, 'contact.branch.address')}</p>
         </div>
       </div>
 
       <!-- Working hours -->
       <div class="lg:col-span-1">
-        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-4">{t(lang, 'contact.hours.label')}</h3>
-        <div class="bg-stone-50 rounded-xl p-3 sm:p-5">
+        <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">{t(lang, 'contact.hours.label')}</h3>
+        <div class="bg-stone-800/50 rounded-xl p-3 sm:p-5 border border-stone-700/50">
           <table class="w-full text-xs sm:text-sm">
             <tbody>
               {hoursRows.map((row) => (
-                <tr class={row.border ? 'border-b border-stone-200' : ''}>
-                  <td class="py-2 sm:py-3 font-medium text-stone-900 whitespace-nowrap">{t(lang, row.labelKey)}</td>
-                  <td class="py-2 sm:py-3 text-stone-600 text-right whitespace-nowrap">{t(lang, row.valueKey)}</td>
+                <tr class={row.border ? 'border-b border-stone-700/50' : ''}>
+                  <td class="py-2 sm:py-3 font-medium text-stone-200 whitespace-nowrap">{t(lang, row.labelKey)}</td>
+                  <td class="py-2 sm:py-3 text-stone-400 text-right whitespace-nowrap">{t(lang, row.valueKey)}</td>
                 </tr>
               ))}
             </tbody>
@@ -70,19 +70,19 @@ const hoursRows = [
 
       <!-- How to get there -->
       <div class="lg:col-span-1">
-        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-4">{t(lang, 'contact.directions.label')}</h3>
+        <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">{t(lang, 'contact.directions.label')}</h3>
         <div class="space-y-4">
-          <div class="bg-stone-50 rounded-xl p-5">
-            <h4 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.kotor.title')}</h4>
-            <p class="text-sm text-stone-600">{t(lang, 'contact.directions.kotor.desc')}</p>
+          <div class="bg-stone-800/50 rounded-xl p-5 border border-stone-700/50">
+            <h4 class="font-semibold text-stone-200 text-sm mb-2">{t(lang, 'contact.directions.kotor.title')}</h4>
+            <p class="text-sm text-stone-400">{t(lang, 'contact.directions.kotor.desc')}</p>
           </div>
-          <div class="bg-stone-50 rounded-xl p-5">
-            <h4 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.tivat.title')}</h4>
-            <p class="text-sm text-stone-600">{t(lang, 'contact.directions.tivat.desc')}</p>
+          <div class="bg-stone-800/50 rounded-xl p-5 border border-stone-700/50">
+            <h4 class="font-semibold text-stone-200 text-sm mb-2">{t(lang, 'contact.directions.tivat.title')}</h4>
+            <p class="text-sm text-stone-400">{t(lang, 'contact.directions.tivat.desc')}</p>
           </div>
-          <div class="bg-stone-50 rounded-xl p-5">
-            <h4 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.hn.title')}</h4>
-            <p class="text-sm text-stone-600">{t(lang, 'contact.directions.hn.desc')}</p>
+          <div class="bg-stone-800/50 rounded-xl p-5 border border-stone-700/50">
+            <h4 class="font-semibold text-stone-200 text-sm mb-2">{t(lang, 'contact.directions.hn.title')}</h4>
+            <p class="text-sm text-stone-400">{t(lang, 'contact.directions.hn.desc')}</p>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@ const hoursRows = [
 
     <!-- More link -->
     <div class="mt-10">
-      <a href={(lang === 'cnr' ? '' : `/${lang}`) + '/contact/'} class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors">
+      <a href={(lang === 'cnr' ? '' : `/${lang}`) + '/contact/'} class="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
         {t(lang, 'contact.more')}
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
@@ -98,7 +98,7 @@ const hoursRows = [
 
     <!-- Map -->
     <div class="mt-12">
-      <div class="rounded-2xl overflow-hidden border border-stone-200">
+      <div class="rounded-2xl overflow-hidden border border-stone-700 shadow-lg">
         <iframe
           src="https://www.google.com/maps?q=Opšta+bolnica+Kotor,+Škaljari,+Kotor,+Montenegro&z=15&output=embed"
           class="w-full aspect-[21/9] border-0"

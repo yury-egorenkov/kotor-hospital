@@ -14,14 +14,17 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
 ---
 
 <main>
-  <section class="py-12 sm:py-20 lg:py-24">
+  <!-- Gradient page header -->
+  <div class="bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="mb-8 sm:mb-12">
-        <SectionBadge text={t(lang, 'prices.badge')} icon={badgeIcon} />
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'prices.title')}</h1>
-        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-stone-500">{t(lang, 'prices.subtitle')}</p>
-      </div>
+      <SectionBadge text={t(lang, 'prices.badge')} icon={badgeIcon} />
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">{t(lang, 'prices.title')}</h1>
+      <p class="mt-3 sm:mt-4 text-base sm:text-lg text-emerald-200/80">{t(lang, 'prices.subtitle')}</p>
+    </div>
+  </div>
+
+  <section class="py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="space-y-8 sm:space-y-12">
         <!-- Fund patients -->
@@ -32,7 +35,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'prices.fund.title')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm border-l-4 border-l-emerald-500 p-4 sm:p-6">
             <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
               <p>{t(lang, 'prices.fund.p1')}</p>
             </div>
@@ -47,7 +50,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'prices.selfpay.title')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm border-l-4 border-l-amber-500 p-4 sm:p-6">
             <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
               <p>{t(lang, 'prices.selfpay.p1')}</p>
               <p>{t(lang, 'prices.selfpay.p2')}</p>
@@ -63,7 +66,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'prices.info.title')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm border-l-4 border-l-blue-500 p-4 sm:p-6">
             <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
               <p>{t(lang, 'prices.info.p1')}</p>
               <p>{t(lang, 'prices.info.p2')}</p>

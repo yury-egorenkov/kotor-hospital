@@ -64,7 +64,7 @@ const badgeIcon = '<svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
       {clinics.map((clinic) => (
-        <a href={clinicBase + clinic.key + '/'} class="group bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-3 sm:p-6 flex items-center gap-3 sm:block hover:border-stone-300 hover:shadow-md transition-all">
+        <a href={clinicBase + clinic.key + '/'} class="group bg-white border border-stone-100 rounded-xl sm:rounded-2xl p-3 sm:p-6 flex items-center gap-3 sm:block shadow-sm hover:shadow-md transition-all">
           <div class={`w-10 h-10 rounded-lg ${clinic.iconBg} flex items-center justify-center shrink-0 sm:mb-4`}>
             <svg class={`w-5 h-5 ${clinic.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               {'iconPaths' in clinic

@@ -9,18 +9,21 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-100 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-18">
       <!-- Logo -->
       <a href={lang === 'cnr' ? '/' : `/${lang}/`} class="flex items-center gap-3 shrink-0">
-        <div class="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-          </svg>
-        </div>
+        <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#059669"/>
+          <rect x="16" y="7" width="4" height="9" rx="2" fill="#fff"/>
+          <rect x="16" y="20" width="4" height="9" rx="2" fill="#fff"/>
+          <rect x="7" y="16" width="9" height="4" rx="2" fill="#fff"/>
+          <rect x="20" y="16" width="9" height="4" rx="2" fill="#fff"/>
+        </svg>
         <div class="hidden sm:block">
-          <span class="text-base font-bold text-stone-900 leading-tight block">{t(lang, 'header.name')}</span>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 leading-none block">{t(lang, 'header.name.label')}</span>
+          <span class="text-base font-semibold text-stone-900 leading-tight block">{t(lang, 'header.name.city')}</span>
         </div>
       </a>
 

@@ -6,6 +6,8 @@ site.og.title: "General Hospital Kotor — JZUOB Kotor"
 site.og.description: "Public health institution General Hospital Kotor. Emergency services, departments, outpatient clinics, working hours and contact."
 
 header.name: "General Hospital Kotor"
+header.name.label: "General Hospital"
+header.name.city: "Kotor"
 header.phone: "032 325 602"
 header.emergency: "Emergency"
 header.emergency.short: "Emergency"

@@ -15,18 +15,21 @@ const mapSrc = 'https://www.google.com/maps?q=Filijala+Meljine,+Herceg+Novi,+Mon
 ---
 
 <main>
-  <section class="py-12 sm:py-20 lg:py-24">
+  <!-- Gradient page header -->
+  <div class="bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="mb-8 sm:mb-12">
-        <SectionBadge text={t(lang, 'meljine.badge')} icon={badgeIcon} />
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'meljine.title')}</h1>
-        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-stone-500">{t(lang, 'meljine.subtitle')}</p>
-      </div>
+      <SectionBadge text={t(lang, 'meljine.badge')} icon={badgeIcon} />
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">{t(lang, 'meljine.title')}</h1>
+      <p class="mt-3 sm:mt-4 text-base sm:text-lg text-emerald-200/80">{t(lang, 'meljine.subtitle')}</p>
+    </div>
+  </div>
+
+  <section class="py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Photo -->
       <div class="mb-8 sm:mb-12">
-        <img src="/images/hospital-meljine.jpg" alt={t(lang, 'meljine.title')} class="w-full rounded-xl sm:rounded-2xl object-cover max-h-80" loading="lazy" />
+        <img src="/images/hospital-meljine.jpg" alt={t(lang, 'meljine.title')} class="w-full rounded-xl sm:rounded-2xl object-cover max-h-80 shadow-lg" loading="lazy" />
       </div>
 
       <div class="space-y-8 sm:space-y-12">
@@ -38,7 +41,7 @@ const mapSrc = 'https://www.google.com/maps?q=Filijala+Meljine,+Herceg+Novi,+Mon
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'meljine.rehabilitation.title')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
               <p>{t(lang, 'meljine.rehabilitation.p1')}</p>
               <p>{t(lang, 'meljine.rehabilitation.p2')}</p>
@@ -54,7 +57,7 @@ const mapSrc = 'https://www.google.com/maps?q=Filijala+Meljine,+Herceg+Novi,+Mon
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'meljine.location.title')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
               <p>{t(lang, 'meljine.location.p1')}</p>
               <p>{t(lang, 'meljine.location.p2')}</p>
@@ -73,7 +76,7 @@ const mapSrc = 'https://www.google.com/maps?q=Filijala+Meljine,+Herceg+Novi,+Mon
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'meljine.hours.title')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
               <p>{t(lang, 'meljine.hours.p1')}</p>
               <p>{t(lang, 'meljine.hours.p2')}</p>
@@ -89,7 +92,7 @@ const mapSrc = 'https://www.google.com/maps?q=Filijala+Meljine,+Herceg+Novi,+Mon
             </div>
             <h2 class="text-lg sm:text-xl font-bold text-stone-900">{t(lang, 'meljine.contact.title')}</h2>
           </div>
-          <div class="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
               <p>{t(lang, 'meljine.contact.p1')}</p>
               <p>{t(lang, 'meljine.contact.p2')}</p>

@@ -6,6 +6,8 @@ site.og.title: "Kotor Devlet Hastanesi — JZUOB Kotor"
 site.og.description: "Kotor Devlet Hastanesi. Acil servis, bölümler, poliklinikler, çalışma saatleri ve iletişim."
 
 header.name: "Kotor Devlet Hastanesi"
+header.name.label: "Devlet Hastanesi"
+header.name.city: "Kotor"
 header.phone: "032 325 602"
 header.emergency: "Acil servis"
 header.emergency.short: "Acil"

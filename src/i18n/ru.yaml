@@ -6,6 +6,8 @@ site.og.title: "Общая больница Котор — JZUOB Kotor"
 site.og.description: "Государственное учреждение здравоохранения — общая больница Котор. Скорая помощь, отделения, амбулатории, часы работы и контакты."
 
 header.name: "Общая больница Котор"
+header.name.label: "Общая больница"
+header.name.city: "Котор"
 header.phone: "032 325 602"
 header.emergency: "Скорая помощь"
 header.emergency.short: "Скорая"
