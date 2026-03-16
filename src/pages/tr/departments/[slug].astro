@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import MobileMenu from '../../../components/MobileMenu.astro';
+import DepartmentPage from '../../../components/DepartmentPage.astro';
+import Footer from '../../../components/Footer.astro';
+
+const lang = 'tr' as const;
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'emergency' } },
+    { params: { slug: 'surgery' } },
+    { params: { slug: 'gynecology' } },
+    { params: { slug: 'internal' } },
+    { params: { slug: 'radiology' } },
+  ];
+}
+
+const { slug } = Astro.params;
+---
+
+<BaseLayout lang={lang}>
+  <Header lang={lang} />
+  <MobileMenu lang={lang} />
+  <DepartmentPage lang={lang} slug={slug} />
+  <Footer lang={lang} />
+</BaseLayout>

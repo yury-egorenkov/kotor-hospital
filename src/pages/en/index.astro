@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+import EmergencyBanner from '../../components/EmergencyBanner.astro';
+import QuickAccess from '../../components/QuickAccess.astro';
+import Departments from '../../components/Departments.astro';
+import Clinics from '../../components/Clinics.astro';
+import About from '../../components/About.astro';
+import Leadership from '../../components/Leadership.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en' as const;
+---
+
+<BaseLayout lang={lang}>
+  <Header lang={lang} />
+  <MobileMenu lang={lang} />
+  <main>
+    <EmergencyBanner lang={lang} />
+    <QuickAccess lang={lang} />
+    <Departments lang={lang} />
+    <Clinics lang={lang} />
+    <About lang={lang} />
+    <Leadership lang={lang} />
+    <Contact lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

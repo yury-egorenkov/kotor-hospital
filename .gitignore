@@ -1,0 +1,47 @@
+# Default blacklist.
+.DS_Store
+
+# Repo root = whitelist.
+/*
+!/*.default.properties
+!/.*ignore
+!/.*rc
+!/.git*
+
+!/readme.md
+!/changelog.md
+!/license.md
+!/LICENSE
+!/task.md
+
+!/makefile
+!/dockerfile
+!/k8s.yaml
+!/package.json
+!/package-lock.json
+
+!/static
+!/styles
+!/scripts
+!/posts
+!/docs
+
+# Astro
+!/astro.config.mjs
+!/tailwind.config.mjs
+!/tsconfig.json
+!/src
+!/public
+!/SITE-PLAN.md
+!/invoice*.html
+!/nginx.conf
+!/api
+!/conf
+
+# Scraped boat images (deployed separately)
+public/img/boats/
+
+# Astro build output
+dist
+node_modules
+.astro

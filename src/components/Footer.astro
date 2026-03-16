@@ -1,0 +1,65 @@
+---
+import { t, type Locale } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<footer class="bg-stone-900 text-stone-400">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <!-- Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+            </svg>
+          </div>
+          <span class="text-base font-bold text-white">{t(lang, 'header.name')}</span>
+        </div>
+        <p class="text-sm leading-relaxed">{t(lang, 'footer.brand.desc')}</p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t(lang, 'footer.nav')}</h3>
+        <ul class="space-y-2.5">
+          <li><a href="#departments" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.departments')}</a></li>
+          <li><a href="#clinics" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.clinics')}</a></li>
+          <li><a href="#about" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.about')}</a></li>
+          <li><a href="#contact" class="text-sm hover:text-white transition-colors">{t(lang, 'nav.contact')}</a></li>
+          <li><a href={(lang === 'cnr' ? '' : `/${lang}`) + '/patients/'} class="text-sm hover:text-white transition-colors">{t(lang, 'nav.patients')}</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t(lang, 'footer.contact')}</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="tel:+38232325602" class="hover:text-white transition-colors">{t(lang, 'emergency.phone')}</a></li>
+          <li><a href="mailto:obk@t-com.me" class="hover:text-white transition-colors">obk@t-com.me</a></li>
+          <li>{t(lang, 'contact.address.street')}, 85331 Kotor</li>
+          <li>{t(lang, 'contact.address.city').split(',').pop()?.trim()}</li>
+        </ul>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t(lang, 'footer.links')}</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="https://ezdravlje.me" target="_blank" rel="noopener" class="hover:text-white transition-colors">{t(lang, 'footer.links.ezdravlje')}</a></li>
+          <li><a href="tel:+38232325602" class="hover:text-white transition-colors">{t(lang, 'footer.links.emergency')}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-stone-500">{t(lang, 'footer.copyright')}</p>
+      <p class="text-xs text-stone-500">Website by <a href="https://egorsky.com" target="_blank" rel="noopener" class="text-stone-400 hover:text-white transition-colors">egorsky.com</a></p>
+    </div>
+  </div>
+</footer>

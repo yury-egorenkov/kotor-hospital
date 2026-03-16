@@ -1,0 +1,106 @@
+---
+import { t, type Locale } from '../i18n/utils';
+import SectionBadge from './SectionBadge.astro';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const badgeIcon = '<svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>';
+
+const hoursRows = [
+  { labelKey: 'contact.hours.emergency', valueKey: 'contact.hours.emergency.value', border: true },
+  { labelKey: 'contact.hours.clinics', valueKey: 'contact.hours.clinics.value', border: true },
+  { labelKey: 'contact.hours.radiology', valueKey: 'contact.hours.radiology.value', border: true },
+  { labelKey: 'contact.hours.radiology.sat', valueKey: 'contact.hours.radiology.sat.value', border: true },
+  { labelKey: 'contact.hours.lab', valueKey: 'contact.hours.lab.value', border: false },
+];
+---
+
+<section id="contact" class="py-16 sm:py-20 lg:py-24 bg-white border-y border-stone-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12 reveal">
+      <SectionBadge text={t(lang, 'contact.badge')} icon={badgeIcon} />
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">{t(lang, 'contact.title')}</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Contact info -->
+      <div class="lg:col-span-1 space-y-6 reveal">
+        <div>
+          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.address.label')}</h3>
+          <p class="text-lg font-semibold text-stone-900">{t(lang, 'contact.address.street')}</p>
+          <p class="text-stone-600">{t(lang, 'contact.address.city')}</p>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.phone.label')}</h3>
+          <a href="tel:+38232325602" class="text-lg font-semibold text-stone-900 hover:text-emerald-600 transition-colors">{t(lang, 'emergency.phone')}</a>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.email.label')}</h3>
+          <a href="mailto:obk@t-com.me" class="text-lg font-semibold text-stone-900 hover:text-emerald-600 transition-colors">obk@t-com.me</a>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">{t(lang, 'contact.branch.label')}</h3>
+          <p class="text-stone-600">{t(lang, 'contact.branch.address')}</p>
+        </div>
+      </div>
+
+      <!-- Working hours -->
+      <div class="lg:col-span-1 reveal">
+        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-4">{t(lang, 'contact.hours.label')}</h3>
+        <div class="bg-stone-50 rounded-xl p-3 sm:p-5">
+          <table class="w-full text-xs sm:text-sm">
+            <tbody>
+              {hoursRows.map((row) => (
+                <tr class={row.border ? 'border-b border-stone-200' : ''}>
+                  <td class="py-2 sm:py-3 font-medium text-stone-900 whitespace-nowrap">{t(lang, row.labelKey)}</td>
+                  <td class="py-2 sm:py-3 text-stone-600 text-right whitespace-nowrap">{t(lang, row.valueKey)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- How to get there -->
+      <div class="lg:col-span-1 reveal">
+        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-4">{t(lang, 'contact.directions.label')}</h3>
+        <div class="space-y-4">
+          <div class="bg-stone-50 rounded-xl p-5">
+            <h4 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.kotor.title')}</h4>
+            <p class="text-sm text-stone-600">{t(lang, 'contact.directions.kotor.desc')}</p>
+          </div>
+          <div class="bg-stone-50 rounded-xl p-5">
+            <h4 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.tivat.title')}</h4>
+            <p class="text-sm text-stone-600">{t(lang, 'contact.directions.tivat.desc')}</p>
+          </div>
+          <div class="bg-stone-50 rounded-xl p-5">
+            <h4 class="font-semibold text-stone-900 text-sm mb-2">{t(lang, 'contact.directions.hn.title')}</h4>
+            <p class="text-sm text-stone-600">{t(lang, 'contact.directions.hn.desc')}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="mt-12 reveal">
+      <div class="rounded-2xl overflow-hidden border border-stone-200">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.8!2d18.7681!3d42.4247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134c3307fda96845%3A0x8a6788e3e5e3a0a9!2z0J7Qv9GI0YLQsCDQsdC-0LvQvdC40YbQsCDQmtC-0YLQvtGA!5e0!3m2!1ssr!2sme!4v1710000000000"
+          class="w-full aspect-[21/9]"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title={t(lang, 'contact.map.title')}
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>

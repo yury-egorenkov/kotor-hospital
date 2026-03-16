@@ -1,0 +1,124 @@
+---
+
+# WWW → non-WWW redirect
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: $KUBE_NAME-www-redirect
+  namespace: $KUBE_NS
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/permanent-redirect: https://$SERVER_HOST$request_uri
+spec:
+  rules:
+  - host: www.$SERVER_HOST
+  tls:
+    - hosts:
+      - www.$SERVER_HOST
+      secretName: www-$SERVER_HOST-tls
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: $KUBE_NAME
+  namespace: $KUBE_NS
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/limit-rps: "10"
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: "3"
+    nginx.ingress.kubernetes.io/limit-connections: "10"
+    nginx.ingress.kubernetes.io/client-body-buffer-size: 100m
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+    nginx.ingress.kubernetes.io/client-body-timeout: 3600s
+    nginx.ingress.kubernetes.io/client-header-timeout: 3600s
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: 3600s
+    nginx.ingress.kubernetes.io/proxy-read-timeout: 3600s
+    nginx.ingress.kubernetes.io/proxy-send-timeout: 3600s
+spec:
+  rules:
+  - host: $SERVER_HOST
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: $KUBE_NAME
+            port:
+              number: 80
+  tls:
+    - hosts:
+      - $SERVER_HOST
+      secretName: $SERVER_HOST-tls
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: $KUBE_NAME
+  namespace: $KUBE_NS
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: $KUBE_NAME
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $KUBE_NAME
+  namespace: $KUBE_NS
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: $KUBE_NAME
+  template:
+    metadata:
+      labels:
+        app: $KUBE_NAME
+    spec:
+      volumes:
+      - name: html
+        persistentVolumeClaim:
+          claimName: $KUBE_NAME-html
+      containers:
+      - name: $KUBE_NAME
+        image: "$DOCKER_TAG_WITH_GIT_SHA"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: VERSION
+          value: "$VERSION"
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+        envFrom:
+        - secretRef:
+            name: $KUBE_NAME-env-default-properties
+        - secretRef:
+            name: $KUBE_NAME-env-properties
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: $KUBE_NAME-html
+  namespace: $KUBE_NS
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

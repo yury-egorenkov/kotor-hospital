@@ -1,0 +1,136 @@
+---
+import '../styles/global.css';
+import { t, type Locale, getAlternateLinks } from '../i18n/utils';
+import DemoBanner from '../components/DemoBanner.astro';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const alternateLinks = getAlternateLinks('/');
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{t(lang, 'site.title')}</title>
+  <meta name="description" content={t(lang, 'site.description')} />
+  <meta property="og:title" content={t(lang, 'site.og.title')} />
+  <meta property="og:description" content={t(lang, 'site.og.description')} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content={lang === 'cnr' ? 'cnr_ME' : `${lang}_${lang.toUpperCase()}`} />
+  {alternateLinks.map(({ lang: l, href }) => (
+    <link rel="alternate" hreflang={l} href={href} />
+  ))}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Hospital",
+    "name": "Javna zdravstvena ustanova opšta bolnica Kotor",
+    "alternateName": "JZUOB Kotor",
+    "url": "https://jzuobkotor.me",
+    "telephone": "+38232325602",
+    "email": "obk@t-com.me",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Škaljari bb",
+      "addressLocality": "Kotor",
+      "postalCode": "85331",
+      "addressCountry": "ME"
+    },
+    "medicalSpecialty": [
+      "Emergency Medicine",
+      "General Surgery",
+      "Gynecology",
+      "Internal Medicine",
+      "Radiology"
+    ],
+    "numberOfEmployees": { "@type": "QuantitativeValue", "value": 250 },
+    "areaServed": ["Kotor", "Tivat", "Herceg Novi"]
+  })} />
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased flex flex-col min-h-screen">
+  <DemoBanner lang={lang} />
+  <slot />
+
+  <script>
+    // Language auto-detect (client-side, runs only on root /)
+    (function() {
+      const COOKIE = 'preferred_lang';
+      const LOCALES = ['cnr','en','ru','uk','tr','de','es','fr'];
+      const path = window.location.pathname;
+      // Only run on root (default locale page)
+      if (path !== '/') return;
+      // Already chose? Don't re-detect
+      if (document.cookie.includes(COOKIE + '=')) return;
+
+      const langs = navigator.languages || [navigator.language];
+      for (const tag of langs) {
+        const base = tag.toLowerCase().split('-')[0];
+        if (LOCALES.includes(base) && base !== 'cnr') {
+          document.cookie = COOKIE + '=' + base + ';path=/;max-age=31536000';
+          window.location.replace('/' + base + '/');
+          return;
+        }
+        // Serbian, Bosnian, Croatian → cnr
+        if (['sr','bs','hr'].includes(base)) {
+          document.cookie = COOKIE + '=cnr;path=/;max-age=31536000';
+          return;
+        }
+      }
+      document.cookie = COOKIE + '=cnr;path=/;max-age=31536000';
+    })();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Accordion
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling as HTMLElement;
+        const icon = btn.querySelector('.accordion-icon') as HTMLElement;
+        const isOpen = body.classList.contains('open');
+        document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('rotated'));
+        document.querySelectorAll('.accordion-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        if (!isOpen) {
+          body.classList.add('open');
+          icon.classList.add('rotated');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMenu() { mobileMenu?.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { mobileMenu?.classList.remove('open'); document.body.style.overflow = ''; }
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    menuBackdrop?.addEventListener('click', closeMenu);
+    mobileMenu?.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
+</body>
+</html>

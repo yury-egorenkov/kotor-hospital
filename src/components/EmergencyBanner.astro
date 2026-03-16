@@ -1,0 +1,28 @@
+---
+import { t, type Locale } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<section class="bg-red-600 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-center gap-x-2.5 text-center flex-wrap">
+    <span class="hidden sm:flex h-2.5 w-2.5 relative shrink-0">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-300 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+    </span>
+    <span class="inline-flex items-center gap-2 text-sm sm:text-base font-semibold">
+      {t(lang, 'emergency.label')}
+{t(lang, 'emergency.247')}
+    </span>
+    <span class="basis-full sm:hidden"></span>
+    <span class="inline-flex items-center gap-1.5 text-sm text-red-100">
+      <a href="tel:+38232325602" class="underline underline-offset-2 text-white font-semibold">{t(lang, 'emergency.phone')}</a>
+      <span class="text-red-200">·</span>
+      <span class="font-normal">{t(lang, 'emergency.address')}</span>
+    </span>
+  </div>
+</section>
