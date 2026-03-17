@@ -8,7 +8,7 @@ interface Props {
 
 const { lang } = Astro.props;
 
-const badgeIcon = '<svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>';
+const badgeIcon = '<svg class="w-3 h-3 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>';
 const checkSvg = '<svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
 
 const docItems = ['patients.docs.id', 'patients.docs.referral', 'patients.docs.insurance', 'patients.docs.meds', 'patients.docs.results', 'patients.docs.personal'];
@@ -20,18 +20,18 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
 
 <main>
   <!-- Gradient page header -->
-  <div class="bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900 py-12 sm:py-16">
+  <div class="bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-900 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionBadge text={t(lang, 'patients.badge')} icon={badgeIcon} />
+      <SectionBadge text={t(lang, 'patients.badge')} icon={badgeIcon} variant="light" />
       <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">{t(lang, 'patients.title')}</h1>
       <p class="mt-3 sm:mt-4 text-base sm:text-lg text-emerald-200/80">{t(lang, 'patients.description')}</p>
     </div>
   </div>
 
-  <section class="py-12 sm:py-16">
+  <section class="py-8 sm:py-12">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="space-y-8 sm:space-y-12">
+      <div class="space-y-6 sm:space-y-8">
         <!-- Documents -->
         <div>
           <div class="flex items-center gap-3 mb-3 sm:mb-4">
@@ -43,7 +43,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.docs.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl shadow-sm p-4 sm:p-5">
             <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-stone-600">
               {docItems.map((key) => (
                 <li class="flex items-start gap-2">
@@ -66,7 +66,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.rights.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-stone-50 border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
+          <div class="bg-stone-50 border border-stone-100 rounded-xl shadow-sm p-4 sm:p-5">
             <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-stone-600">
               {rightItems.map((key) => (
                 <li class="flex items-start gap-2">
@@ -89,7 +89,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.visiting.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
+          <div class="bg-white border border-stone-100 rounded-xl shadow-sm p-4 sm:p-5">
             <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-stone-600">
               {visitItems.map((key) => (
                 <li class="flex items-start gap-2">
@@ -112,7 +112,7 @@ const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
               <p class="text-xs sm:text-sm text-stone-500">{t(lang, 'patients.insurance.subtitle')}</p>
             </div>
           </div>
-          <div class="bg-stone-50 border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
+          <div class="bg-stone-50 border border-stone-100 rounded-xl shadow-sm p-4 sm:p-5">
             <p class="text-sm sm:text-base text-stone-600 leading-relaxed">{t(lang, 'patients.insurance.summary')}</p>
             <a href={insuranceHref} class="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors">
               {t(lang, 'patients.insurance.more')}
