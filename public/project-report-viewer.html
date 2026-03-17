@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JZUOB Kotor — Project Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          typography: {
+            DEFAULT: {
+              css: { maxWidth: 'none' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Markdown prose styling */
+    .prose h1 { font-size: 2rem; font-weight: 800; margin-top: 0; margin-bottom: 1.25rem; color: #0a0a0a; letter-spacing: -0.03em; line-height: 1.2; }
+    .prose h2 { font-size: 1.375rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #0a0a0a; padding-bottom: 0.625rem; border-bottom: 1px solid #e5e5e5; }
+    .prose h3 { font-size: 1.0625rem; font-weight: 600; margin-top: 1.75rem; margin-bottom: 0.625rem; color: #171717; }
+    .prose h4 { font-size: 0.9375rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #262626; }
+    .prose p { margin-top: 0.625rem; margin-bottom: 0.625rem; line-height: 1.7; color: #404040; }
+    .prose strong { color: #0a0a0a; font-weight: 600; }
+    .prose a { color: #059669; text-decoration: none; border-bottom: 1px solid #a7f3d0; transition: border-color 0.15s; }
+    .prose a:hover { border-bottom-color: #059669; }
+    .prose ul { margin-top: 0.625rem; margin-bottom: 0.625rem; padding-left: 1.25rem; list-style-type: disc; }
+    .prose ol { margin-top: 0.625rem; margin-bottom: 0.625rem; padding-left: 1.25rem; list-style-type: decimal; }
+    .prose li { margin-top: 0.25rem; margin-bottom: 0.25rem; line-height: 1.7; color: #404040; }
+    .prose li strong { color: #0a0a0a; }
+    .prose code { font-size: 0.8125rem; background: #fafafa; border: 1px solid #e5e5e5; border-radius: 4px; padding: 0.125rem 0.375rem; color: #059669; font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; }
+    .prose pre { background: #0a0a0a; color: #e5e5e5; border-radius: 8px; padding: 1.25rem 1.5rem; overflow-x: auto; margin-top: 1rem; margin-bottom: 1rem; font-size: 0.8125rem; line-height: 1.7; }
+    .prose pre code { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
+    .prose hr { border: none; border-top: 1px solid #e5e5e5; margin: 2rem 0; }
+    .prose blockquote { border-left: 3px solid #059669; padding-left: 1rem; margin: 1rem 0; color: #525252; font-style: italic; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+    .prose th { text-align: left; padding: 0.625rem 0.875rem; font-weight: 600; color: #262626; border-bottom: 2px solid #e5e5e5; }
+    .prose td { padding: 0.5rem 0.875rem; color: #404040; border-bottom: 1px solid #f5f5f5; }
+    .prose tbody tr:hover { background: #fafafa; }
+    .prose img { border-radius: 8px; margin: 1rem 0; }
+
+    /* TOC sidebar */
+    .toc a { display: block; padding: 0.3125rem 0.75rem; font-size: 0.8125rem; color: #737373; border-left: 2px solid transparent; transition: all 0.15s; text-decoration: none; }
+    .toc a:hover { color: #059669; border-left-color: #a7f3d0; }
+    .toc a.active { color: #059669; border-left-color: #059669; font-weight: 500; }
+    .toc .toc-h3 { padding-left: 1.5rem; font-size: 0.75rem; }
+
+    /* Loading state */
+    @keyframes pulse-bar { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+    .loading-bar { animation: pulse-bar 1.5s ease-in-out infinite; }
+
+    /* Print */
+    @media print {
+      .no-print { display: none !important; }
+      .prose { max-width: 100% !important; }
+    }
+  </style>
+</head>
+<body class="bg-white text-stone-800 font-sans antialiased">
+
+  <!-- Header -->
+  <header class="border-b border-neutral-100 sticky top-0 z-50 bg-white no-print">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">JZ</div>
+        <div>
+          <div class="font-semibold text-neutral-900 text-sm">JZUOB Kotor</div>
+          <div class="text-xs text-neutral-400">Project Report</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="project-report.html" class="text-xs text-neutral-400 hover:text-emerald-600 transition-colors px-3 py-1.5">Designed Version</a>
+        <button onclick="window.print()" class="text-xs text-neutral-400 hover:text-neutral-600 transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-neutral-50">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          Print
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-10 flex gap-10">
+
+    <!-- TOC sidebar -->
+    <aside class="hidden lg:block w-56 flex-shrink-0 no-print">
+      <nav class="toc sticky top-14 max-h-[calc(100vh-5rem)] overflow-y-auto" id="toc"></nav>
+    </aside>
+
+    <!-- Content -->
+    <main class="min-w-0 flex-1">
+      <!-- Loading -->
+      <div id="loading" class="space-y-4 py-8">
+        <div class="h-10 bg-neutral-100 rounded-lg w-3/4 loading-bar"></div>
+        <div class="h-4 bg-neutral-50 rounded w-full loading-bar" style="animation-delay: 0.2s"></div>
+        <div class="h-4 bg-neutral-50 rounded w-5/6 loading-bar" style="animation-delay: 0.3s"></div>
+        <div class="h-4 bg-neutral-50 rounded w-2/3 loading-bar" style="animation-delay: 0.4s"></div>
+        <div class="h-8 bg-neutral-100 rounded-lg w-1/2 mt-8 loading-bar" style="animation-delay: 0.5s"></div>
+        <div class="h-4 bg-neutral-50 rounded w-full loading-bar" style="animation-delay: 0.6s"></div>
+        <div class="h-4 bg-neutral-50 rounded w-4/5 loading-bar" style="animation-delay: 0.7s"></div>
+      </div>
+
+      <!-- Error -->
+      <div id="error" class="hidden py-16 text-center">
+        <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </div>
+        <h3 class="font-bold text-neutral-800 text-lg">Could not load project-report.md</h3>
+        <p class="text-neutral-500 text-sm mt-2" id="error-message">Make sure the file is in the same directory.</p>
+      </div>
+
+      <!-- Rendered markdown -->
+      <article class="prose max-w-none" id="content"></article>
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-100 mt-16 no-print">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="text-xs text-neutral-400">Rendered from <code class="bg-neutral-50 px-1.5 py-0.5 rounded text-neutral-500 border border-neutral-100">project-report.md</code></div>
+      <div class="text-xs text-neutral-400">Website by <a href="https://egorsky.com" class="font-medium text-neutral-500 hover:text-emerald-600 transition-colors">egorsky.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    async function loadReport() {
+      const loadingEl = document.getElementById('loading');
+      const errorEl = document.getElementById('error');
+      const errorMsg = document.getElementById('error-message');
+      const contentEl = document.getElementById('content');
+      const tocEl = document.getElementById('toc');
+
+      try {
+        const res = await fetch('project-report.md');
+        if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+        const md = await res.text();
+
+        // Render markdown
+        contentEl.innerHTML = marked.parse(md, {
+          gfm: true,
+          breaks: false,
+        });
+
+        // Build TOC from rendered headings
+        const headings = contentEl.querySelectorAll('h2, h3');
+        let tocHTML = '';
+        headings.forEach((h, i) => {
+          const id = 'section-' + i;
+          h.id = id;
+          const level = h.tagName === 'H3' ? 'toc-h3' : '';
+          tocHTML += `<a href="#${id}" class="${level}">${h.textContent}</a>`;
+        });
+        tocEl.innerHTML = tocHTML;
+
+        // Active TOC tracking
+        const tocLinks = tocEl.querySelectorAll('a');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = tocEl.querySelector(`a[href="#${entry.target.id}"]`);
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -70% 0px' });
+
+        headings.forEach(h => observer.observe(h));
+
+        // Wrap tables for horizontal scroll
+        contentEl.querySelectorAll('table').forEach(table => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'overflow-x-auto rounded-lg border border-neutral-100';
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        });
+
+        loadingEl.classList.add('hidden');
+
+      } catch (err) {
+        loadingEl.classList.add('hidden');
+        errorEl.classList.remove('hidden');
+        errorMsg.textContent = err.message;
+      }
+    }
+
+    loadReport();
+  </script>
+
+</body>
+</html>
