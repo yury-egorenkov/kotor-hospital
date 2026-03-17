@@ -30,16 +30,50 @@ const personSmallSvg = '<svg class="w-6 h-6 text-stone-400" fill="none" viewBox=
 
 const homeHref = lang === 'cnr' ? '/' : `/${lang}/`;
 
-const hasExperience = (n: number) => {
-  const key = `dept.${slug}.doctor${n}.experience`;
-  const val = t(lang, key);
-  return val !== key;
-};
-const hasEducation = (n: number) => {
-  const key = `dept.${slug}.doctor${n}.education`;
-  const val = t(lang, key);
-  return val !== key;
-};
+const hasKey = (key: string) => t(lang, key) !== key;
+const hasExperience = (n: number) => hasKey(`dept.${slug}.doctor${n}.experience`);
+const hasEducation = (n: number) => hasKey(`dept.${slug}.doctor${n}.education`);
+
+// Conditional section flags
+const hasStats = hasKey(`dept.${slug}.stat1.value`);
+const hasAbout = hasKey(`dept.${slug}.about.p1`);
+const hasPatientPrep = hasKey(`dept.${slug}.prep.title`);
+const hasEquipment = hasKey(`dept.${slug}.equip.item1`);
+
+// Dynamic specialists: doctor2..doctorN (doctor1 = head, rendered separately)
+const specialists: number[] = [];
+for (let i = 2; i <= 10; i++) {
+  if (hasKey(`dept.${slug}.doctor${i}.name`)) {
+    specialists.push(i);
+  } else {
+    break;
+  }
+}
+
+// Dynamic services: iterate service1..service8, stop when key doesn't exist
+const services: string[] = [];
+for (let i = 1; i <= 8; i++) {
+  const key = `dept.${slug}.service${i}`;
+  if (hasKey(key)) {
+    services.push(t(lang, key));
+  } else {
+    break;
+  }
+}
+
+// Stats config for gradient cards
+const statGradients = [
+  'from-emerald-50 to-teal-50',
+  'from-blue-50 to-cyan-50',
+  'from-violet-50 to-purple-50',
+  'from-amber-50 to-orange-50',
+];
+const statIcons = [
+  '<svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>',
+  '<svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>',
+  '<svg class="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>',
+  '<svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+];
 ---
 
 <main>
@@ -59,36 +93,126 @@ const hasEducation = (n: number) => {
     </div>
   </div>
 
-  <section class="py-12 sm:py-16">
+  <!-- Quick Stats Bar -->
+  {hasStats && (
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        {[1, 2, 3, 4].map((n, i) => (
+          <div class={`bg-gradient-to-br ${statGradients[i]} rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-sm border border-white/60`}>
+            <div class="flex items-center gap-3">
+              <Fragment set:html={statIcons[i]} />
+              <div>
+                <p class="text-xl sm:text-2xl font-extrabold text-stone-900">{t(lang, `dept.${slug}.stat${n}.value`)}</p>
+                <p class="text-xs sm:text-sm text-stone-600">{t(lang, `dept.${slug}.stat${n}.label`)}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <section class={hasStats ? 'py-8 sm:py-12' : 'py-8 sm:py-12'}>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Services + Sidebar grid -->
+      <!-- Main content + Sidebar grid -->
       <div class="grid lg:grid-cols-3 gap-6 sm:gap-8">
         <!-- Main content -->
-        <div class="lg:col-span-2 space-y-6 sm:space-y-8">
+        <div class="lg:col-span-2 space-y-5 sm:space-y-6">
+
+          <!-- About the Department -->
+          {hasAbout && (
+            <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
+              <div class="flex items-center gap-2 mb-3 sm:mb-4">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+                </svg>
+                <h2 class="text-base sm:text-lg font-bold text-stone-900">{t(lang, 'dept.about.title')}</h2>
+              </div>
+              <div class="space-y-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+                <p>{t(lang, `dept.${slug}.about.p1`)}</p>
+                {hasKey(`dept.${slug}.about.p2`) && <p>{t(lang, `dept.${slug}.about.p2`)}</p>}
+                {hasKey(`dept.${slug}.about.p3`) && <p>{t(lang, `dept.${slug}.about.p3`)}</p>}
+              </div>
+            </div>
+          )}
+
           <!-- Services -->
           <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <h2 class="text-base sm:text-lg font-bold text-stone-900 mb-3 sm:mb-4">{t(lang, 'dept.services')}</h2>
-            <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-stone-600">
-              <li class="flex items-start gap-2"><Fragment set:html={checkSvg} />{t(lang, `dept.${slug}.service1`)}</li>
-              <li class="flex items-start gap-2"><Fragment set:html={checkSvg} />{t(lang, `dept.${slug}.service2`)}</li>
-              <li class="flex items-start gap-2"><Fragment set:html={checkSvg} />{t(lang, `dept.${slug}.service3`)}</li>
+            <ul class={`text-sm sm:text-base text-stone-600 ${services.length > 3 ? 'grid sm:grid-cols-2 gap-x-4 gap-y-2.5 sm:gap-y-3' : 'space-y-2.5 sm:space-y-3'}`}>
+              {services.map((svc) => (
+                <li class="flex items-start gap-2"><Fragment set:html={checkSvg} />{svc}</li>
+              ))}
             </ul>
           </div>
 
-          <!-- Photo placeholder -->
-          <div class="bg-stone-100 border border-stone-100 rounded-xl sm:rounded-2xl aspect-video shadow-sm flex items-center justify-center">
-            <div class="text-center text-stone-400">
-              <svg class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/>
-              </svg>
-              <span class="text-sm">{t(lang, 'departments.photo')}</span>
+          <!-- For Patients -->
+          {hasPatientPrep && (
+            <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
+              <div class="flex items-center gap-2 mb-4 sm:mb-5">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/>
+                </svg>
+                <h2 class="text-base sm:text-lg font-bold text-stone-900">{t(lang, 'dept.patients.title')}</h2>
+              </div>
+
+              <!-- Before Your Surgery -->
+              <div class="mb-5 sm:mb-6">
+                <h3 class="text-sm font-semibold text-stone-700 mb-2.5">{t(lang, `dept.${slug}.prep.title`)}</h3>
+                <ul class="space-y-2 text-sm text-stone-600">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    hasKey(`dept.${slug}.prep.item${n}`) && (
+                      <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-amber-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                        {t(lang, `dept.${slug}.prep.item${n}`)}
+                      </li>
+                    )
+                  ))}
+                </ul>
+              </div>
+
+              <div class="border-t border-stone-100 pt-5 sm:pt-6">
+                <h3 class="text-sm font-semibold text-stone-700 mb-2.5">{t(lang, `dept.${slug}.bring.title`)}</h3>
+                <ul class="space-y-2 text-sm text-stone-600">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    hasKey(`dept.${slug}.bring.item${n}`) && (
+                      <li class="flex items-start gap-2">
+                        <Fragment set:html={checkSvg} />
+                        {t(lang, `dept.${slug}.bring.item${n}`)}
+                      </li>
+                    )
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          )}
+
+          <!-- Equipment & Technology -->
+          {hasEquipment && (
+            <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
+              <div class="flex items-center gap-2 mb-3 sm:mb-4">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.1-3.77a1 1 0 01-.17-1.45l2.72-3.45a1 1 0 011.46-.1l5.1 3.78m-5.1 3.78l5.1-3.78m-5.1 3.78L4.2 18.34a1 1 0 01-.82.42H2m9.42-3.59l5.1 3.78m0 0l3.24 2.4a1 1 0 00.82.18l1.2-.24M22 12l-2.16-1.62"/>
+                </svg>
+                <h2 class="text-base sm:text-lg font-bold text-stone-900">{t(lang, 'dept.equipment.title')}</h2>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-3">
+                {[1, 2, 3, 4].map((n) => (
+                  hasKey(`dept.${slug}.equip.item${n}`) && (
+                    <div class="flex items-start gap-3 bg-stone-50 rounded-lg p-3">
+                      <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
+                      <p class="text-sm text-stone-600">{t(lang, `dept.${slug}.equip.item${n}`)}</p>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <!-- Sidebar -->
-        <div class="space-y-4 sm:space-y-6">
+        <div class="space-y-4 sm:space-y-6 lg:sticky lg:top-24 lg:self-start">
           <!-- Working hours -->
           <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm p-4 sm:p-6">
             <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-2 sm:mb-3">{t(lang, 'contact.hours.label')}</h3>
@@ -179,9 +303,9 @@ const hasEducation = (n: number) => {
           </div>
         </div>
 
-        <!-- B. Two Specialists — side by side, clearly smaller than head -->
+        <!-- B. Specialists — grid, clearly smaller than head -->
         <div class="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
-          {[2, 3].map((n) => (
+          {specialists.map((n) => (
             <div class="bg-white border border-stone-100 rounded-xl sm:rounded-2xl shadow-sm overflow-hidden">
               <div class="aspect-square bg-stone-100 relative">
                 <img
